@@ -5,46 +5,89 @@
   <title>Gallery - Abby's Bake House</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
+  <style>
+    /* Ensure category cards are square and centered */
+    .category-card {
+      width: 100%;
+      height: 0;
+      padding-bottom: 100%; /* Creates a square aspect ratio */
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 8px;
+      text-decoration: none; /* Remove underline from links */
+    }
+    .category-card img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1; /* Ensure image is below overlay */
+    }
+    .category-card .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(244, 194, 194, 0.3);
+      color:  #333333; /* Dark gray text color */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 1.5rem;
+      z-index: 2; /* Ensure overlay is on top of the image */
+    }
+  </style>
 </head>
 <body>
-    <!-- Header container to load the header dynamically -->
-    <div id="header-container"></div>
+  <!-- Header container to load the header dynamically -->
+  <div id="header-container"></div>
 
-    <main class="container mx-auto p-4">
-        <section id="gallery">
-          <h1 class="text-3xl font-bold mb-6">Gallery</h1>
-          
-          <!-- Cakes Gallery -->
-          <div id="cakes-gallery" class="mb-8">
-            <h2 class="text-2xl font-semibold mb-4">Cakes</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              <!-- Gallery images for cakes -->
-              <img src="images/cake1.jpg" alt="Cake 1" class="w-full h-auto object-cover rounded-lg shadow-md">
-              <img src="images/cake2.jpg" alt="Cake 2" class="w-full h-auto object-cover rounded-lg shadow-md">
-              <!-- Add more images as needed -->
-            </div>
-          </div>
-    
-          <!-- Cupcakes Gallery -->
-          <div id="cupcakes-gallery" class="mb-8">
-            <h2 class="text-2xl font-semibold mb-4">Cupcakes</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              <!-- Gallery images for cupcakes -->
-              <img src="images/cupcake1.jpg" alt="Cupcake 1" class="w-full h-auto object-cover rounded-lg shadow-md">
-              <img src="images/cupcake2.jpg" alt="Cupcake 2" class="w-full h-auto object-cover rounded-lg shadow-md">
-              <!-- Add more images as needed -->
-            </div>
-          </div>
-    
-          <!-- Other categories (e.g., breads, cookies) -->
-        </section>
-      </main>
-    
-      <footer class="bg-A19D9D text-white text-center p-4">
-        © 2024 Abby's Bake House
-      </footer>
-      
-      <script src="scripts/load-header.js"></script>
-      <script src="scripts/main.js"></script>
-    </body>
-    </html>
+  <main class="container mx-auto p-4">
+    <section id="gallery">
+      <h1 class="text-4xl font-bold mb-8 text-center">Gallery</h1>
+
+      <!-- Category Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <!-- Cakes Category -->
+        <a href="cakes.html" class="category-card bg-white shadow-md">
+          <img src="images\canva\4.png" alt="Cakes">
+          <div class="overlay">Cakes</div>
+        </a>
+        <!-- Cookies Category -->
+        <a href="cookies.html" class="category-card bg-white shadow-md">
+          <img src="images\canva\3.png" alt="Cookies">
+          <div class="overlay">Cookies</div>
+        </a>
+        <!-- Bread Category -->
+        <a href="bread.html" class="category-card bg-white shadow-md">
+          <img src="images\canva\2.png" alt="Bread">
+          <div class="overlay">Bread</div>
+        </a>
+        <!-- Cupcakes Category -->
+        <a href="cupcakes.html" class="category-card bg-white shadow-md">
+          <img src="images\canva\1.png" alt="Cupcakes">
+          <div class="overlay">Cupcakes</div>
+        </a>
+        <!-- Pies Category -->
+        <a href="pies.html" class="category-card bg-white shadow-md">
+          <img src="images\canva\pie.png" alt="Pies">
+          <div class="overlay">Pies</div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-A19D9D text-white text-center p-4">
+    © 2024 Abby's Bake House
+  </footer>
+
+  <script src="scripts/load-header.js"></script>
+</body>
+</html>
