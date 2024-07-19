@@ -4,32 +4,47 @@
   <meta charset="UTF-8">
   <title>Gallery - Abby's Bake House</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="order.html">Order</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section id="gallery">
-      <h1>Gallery</h1>
-      <div id="cakes-gallery">
-        <h2>Cakes</h2>
-        <!-- Gallery images -->
-      </div>
-      <div id="cupcakes-gallery">
-        <h2>Cupcakes</h2>
-        <!-- Gallery images -->
-      </div>
-      <!-- Other categories -->
-    </section>
-  </main>
-</body>
-</html>
+    <!-- Header container to load the header dynamically -->
+    <div id="header-container"></div>
+
+    <main class="container mx-auto p-4">
+        <section id="gallery">
+          <h1 class="text-3xl font-bold mb-6">Gallery</h1>
+          
+          <!-- Cakes Gallery -->
+          <div id="cakes-gallery" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Cakes</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <!-- Gallery images for cakes -->
+              <img src="images/cake1.jpg" alt="Cake 1" class="w-full h-auto object-cover rounded-lg shadow-md">
+              <img src="images/cake2.jpg" alt="Cake 2" class="w-full h-auto object-cover rounded-lg shadow-md">
+              <!-- Add more images as needed -->
+            </div>
+          </div>
+    
+          <!-- Cupcakes Gallery -->
+          <div id="cupcakes-gallery" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Cupcakes</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <!-- Gallery images for cupcakes -->
+              <img src="images/cupcake1.jpg" alt="Cupcake 1" class="w-full h-auto object-cover rounded-lg shadow-md">
+              <img src="images/cupcake2.jpg" alt="Cupcake 2" class="w-full h-auto object-cover rounded-lg shadow-md">
+              <!-- Add more images as needed -->
+            </div>
+          </div>
+    
+          <!-- Other categories (e.g., breads, cookies) -->
+        </section>
+      </main>
+    
+      <footer class="bg-A19D9D text-white text-center p-4">
+        © 2024 Abby's Bake House
+      </footer>
+      
+      <script src="scripts/load-header.js"></script>
+      <script src="scripts/main.js"></script>
+    </body>
+    </html>

@@ -14,6 +14,7 @@ document.getElementById('nav-toggle').addEventListener('click', function () {
     menu.classList.toggle('hidden');
   });
   
+  
   // Basic form validation
   function validateForm() {
     var name = document.forms["orderForm"]["name"].value;

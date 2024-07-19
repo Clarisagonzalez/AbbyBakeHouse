@@ -4,19 +4,12 @@
   <meta charset="UTF-8">
   <title>Menu - Abby's Bake House</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="order.html">Order</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Header container to load the header dynamically -->
+    <div id="header-container"></div>
+  
   <main>
     <section id="menu">
       <h1>Menu</h1>
@@ -31,5 +24,10 @@
       <!-- Other categories -->
     </section>
   </main>
+<footer class="bg-A19D9D text-white text-center p-4">
+    © 2024 Abby's Bake House
+  </footer>
+  <script src="scripts/load-header.js"></script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
