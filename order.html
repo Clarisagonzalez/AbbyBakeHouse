@@ -29,7 +29,7 @@
     .form-group input,
     .form-group select,
     .form-group textarea {
-      width: 100%;
+      width: 50%;
       padding: 0.5rem;
       border: 1px solid #ddd;
       border-radius: 4px;
@@ -53,31 +53,34 @@
 
   <main class="container mx-auto p-4">
     <section id="order-form">
-      <h1 class="text-4xl font-bold mb-8 text-center">Order Form</h1>
+     <!-- Header Image -->
+     <div class="text-center mb-8">
+      <img src="images/canva/orderform.png" alt="Menu Header" class="mx-auto" style="max-width: 50%; height: auto;">
+    </div>
 
       <form id="order-form" class="form-section">
         <!-- Name -->
         <div class="mb-4">
-          <label for="name" class="block text-lg font-semibold mb-2">Name</label>
-          <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded" required>
+          <label for="name" class="block text-lg font-semibold mb-2">Name:</label>
+          <input type="text" id="name" name="name" class="w-1/2 p-2 border border-gray-300 rounded" required>
         </div>
 
         <!-- Phone Number -->
         <div class="mb-4">
           <label for="phone" class="block text-lg font-semibold mb-2">Phone Number</label>
-          <input type="tel" id="phone" name="phone" class="w-full p-2 border border-gray-300 rounded" required>
+          <input type="tel" id="phone" name="phone" class="w-1/2 p-2 border border-gray-300 rounded" required>
         </div>
 
         <!-- Date -->
         <div class="mb-4">
           <label for="date" class="block text-lg font-semibold mb-2">Desired Date</label>
-          <input type="date" id="date" name="date" class="w-full p-2 border border-gray-300 rounded" required>
+          <input type="date" id="date" name="date" class="w-1/2 p-2 border border-gray-300 rounded" required>
         </div>
 
         <!-- Cake Size -->
         <div class="mb-4">
           <label for="cake-size" class="block text-lg font-semibold mb-2">Cake Size</label>
-          <select id="cake-size" name="cake-size" class="w-full p-2 border border-gray-300 rounded" required>
+          <select id="cake-size" name="cake-size" class="w-1/2 p-2 border border-gray-300 rounded" required>
             <option value="" disabled selected>Select Size</option>
             <option value="6-inch">6-inch</option>
             <option value="8-inch">8-inch</option>
@@ -86,29 +89,57 @@
             <option value="Custom">Custom</option>
           </select>
         </div>
+         <!-- Flavor -->
+         <div class="form-group">
+            <label for="flavor" class="block text-lg font-medium">Flavor:</label>
+            <select id="flavor" name="flavor" class="form-select mt-1 block w-1/2" required>
+                <option value="" disabled selected>Select Flavor</option>
+              <option value="vanilla">Vanilla</option>
+              <option value="chocolate">Chocolate</option>
+              <option value="red-velvet">Red Velvet</option>
+              <option value="carrot">Carrot</option>
+              <option value="lemon">Lemon</option>
+            </select>
+          </div>
 
         <!-- Custom Dimensions (if Custom Size selected) -->
         <div id="custom-dimensions" class="mb-4 hidden">
           <label for="custom-size" class="block text-lg font-semibold mb-2">Custom Dimensions</label>
-          <input type="text" id="custom-size" name="custom-size" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter dimensions (e.g., 14x14 inches)">
+          <input type="text" id="custom-size" name="custom-size" class="w-1/2 p-2 border border-gray-300 rounded" placeholder="Enter dimensions (e.g., 14x14 inches)">
         </div>
+        <!-- Shape -->
+        <div class="form-group">
+            <label for="shape" class="block text-lg font-medium">Shape:</label>
+            <select id="shape" name="shape" class="form-select mt-1 block w-1/2" required>
+                <option value="" disabled selected>Select Shape</option>
+              <option value="round">Round</option>
+              <option value="square">Square</option>
+              <option value="heart">Heart</option>
+              <option value="custom">Custom</option>
+            </select>
+          </div>
+          <!-- Cake Text -->
+          <div class="form-group">
+            <label for="cake-text" class="block text-lg font-medium">Cake Text:</label>
+            <input type="text" id="cake-text" name="cake-text" class="form-input mt-1 block w-1/2" placeholder="What would you like the cake to say?" required>
+          </div>
 
         <!-- Specific Colors -->
         <div class="mb-4">
           <label for="colors" class="block text-lg font-semibold mb-2">Specific Colors</label>
-          <input type="text" id="colors" name="colors" class="w-full p-2 border border-gray-300 rounded" placeholder="e.g., Red, Blue, Green">
+          <input type="text" id="colors" name="colors" class="w-1/2 p-2 border border-gray-300 rounded" placeholder="e.g., Red, Blue, Green">
         </div>
 
         <!-- Decor -->
         <div class="mb-4">
           <label for="decor" class="block text-lg font-semibold mb-2">Decor</label>
-          <input type="text" id="decor" name="decor" class="w-full p-2 border border-gray-300 rounded" placeholder="e.g., Flowers, Sprinkles">
+          <input type="text" id="decor" name="decor" class="w-1/2 p-2 border border-gray-300 rounded" placeholder="e.g., Flowers, Sprinkles">
         </div>
 
         <!-- Large Orders -->
         <div class="mb-4">
           <label for="large-orders" class="block text-lg font-semibold mb-2">Large Orders</label>
-          <textarea id="large-orders" name="large-orders" class="w-full p-2 border border-gray-300 rounded" rows="3" placeholder="Provide details for large orders, if any."></textarea>
+          <textarea id="large-orders" name="large-orders" class="w-1/2 p-2 border border-gray-300 rounded" rows="3" placeholder="Provide details for large orders, if any."></textarea>
         </div>
 
         <!-- Submit Button -->
