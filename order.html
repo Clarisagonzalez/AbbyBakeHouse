@@ -2,32 +2,142 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Order - Abby's Bake House</title>
+  <title>Order Form - Abby's Bake House</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
+  <style>
+    /* Add styles for the order form */
+    .order-form-container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .order-form-container h1 {
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .order-disclaimer {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: rgba(244, 194, 194, 0.3); /* Light pink overlay */
+      border-left: 5px solid #f19cbb;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header container to load the header dynamically -->
-    <div id="header-container"></div>
-  <main>
-    <section id="order">
-      <h1>Order Form</h1>
-      <form name="orderForm" onsubmit="return validateForm()">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-        <label for="orderDetails">Order Details:</label>
-        <textarea id="orderDetails" name="orderDetails"></textarea>
-        <input type="submit" value="Place Order">
+  <!-- Header container to load the header dynamically -->
+  <div id="header-container"></div>
+
+  <main class="container mx-auto p-4">
+    <section id="order-form">
+      <h1 class="text-4xl font-bold mb-8 text-center">Order Form</h1>
+
+      <form id="order-form" class="form-section">
+        <!-- Name -->
+        <div class="mb-4">
+          <label for="name" class="block text-lg font-semibold mb-2">Name</label>
+          <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded" required>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="mb-4">
+          <label for="phone" class="block text-lg font-semibold mb-2">Phone Number</label>
+          <input type="tel" id="phone" name="phone" class="w-full p-2 border border-gray-300 rounded" required>
+        </div>
+
+        <!-- Date -->
+        <div class="mb-4">
+          <label for="date" class="block text-lg font-semibold mb-2">Desired Date</label>
+          <input type="date" id="date" name="date" class="w-full p-2 border border-gray-300 rounded" required>
+        </div>
+
+        <!-- Cake Size -->
+        <div class="mb-4">
+          <label for="cake-size" class="block text-lg font-semibold mb-2">Cake Size</label>
+          <select id="cake-size" name="cake-size" class="w-full p-2 border border-gray-300 rounded" required>
+            <option value="" disabled selected>Select Size</option>
+            <option value="6-inch">6-inch</option>
+            <option value="8-inch">8-inch</option>
+            <option value="10-inch">10-inch</option>
+            <option value="12-inch">12-inch</option>
+            <option value="Custom">Custom</option>
+          </select>
+        </div>
+
+        <!-- Custom Dimensions (if Custom Size selected) -->
+        <div id="custom-dimensions" class="mb-4 hidden">
+          <label for="custom-size" class="block text-lg font-semibold mb-2">Custom Dimensions</label>
+          <input type="text" id="custom-size" name="custom-size" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter dimensions (e.g., 14x14 inches)">
+        </div>
+
+        <!-- Specific Colors -->
+        <div class="mb-4">
+          <label for="colors" class="block text-lg font-semibold mb-2">Specific Colors</label>
+          <input type="text" id="colors" name="colors" class="w-full p-2 border border-gray-300 rounded" placeholder="e.g., Red, Blue, Green">
+        </div>
+
+        <!-- Decor -->
+        <div class="mb-4">
+          <label for="decor" class="block text-lg font-semibold mb-2">Decor</label>
+          <input type="text" id="decor" name="decor" class="w-full p-2 border border-gray-300 rounded" placeholder="e.g., Flowers, Sprinkles">
+        </div>
+
+        <!-- Large Orders -->
+        <div class="mb-4">
+          <label for="large-orders" class="block text-lg font-semibold mb-2">Large Orders</label>
+          <textarea id="large-orders" name="large-orders" class="w-full p-2 border border-gray-300 rounded" rows="3" placeholder="Provide details for large orders, if any."></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="w-full py-2 bg-A19D9D text-white font-semibold rounded">Submit Order</button>
       </form>
+
+       <!-- Disclaimer -->
+       <div class="order-disclaimer">
+        <h2 class="text-lg font-semibold">Disclaimer</h2>
+        <p><strong>Please Note:</strong></p>
+        <ul class="list-disc pl-5">
+          <li><strong>Advance Notice Required:</strong> All cake orders must be placed at least <strong>one week in advance</strong> to ensure availability and proper preparation.</li>
+          <li><strong>Customization:</strong> For custom cake sizes and decorations, please provide as much detail as possible in the order form. Custom orders may require additional time for preparation.</li>
+          <li><strong>Order Confirmation:</strong> Once your order is received, we will send a confirmation email with the details and any additional information needed.</li>
+          <li><strong>Large Orders:</strong> For large orders or special requests, please allow extra time for processing. We may contact you for further details to ensure your needs are met.</li>
+          <li><strong>Contact Us:</strong> If you have any questions or need assistance with your order, please feel free to contact us at [your contact information].</li>
+        </ul>
+        <p>Thank you for choosing Abby's Bake House! We look forward to creating something special for you.</p>
+      </div>
+    </div>
+  </main>
     </section>
-    </main>
-    <footer class="bg-A19D9D text-white text-center p-4">
-        © 2024 Abby's Bake House
-      </footer>
-      
-      <script src="scripts/load-header.js"></script>
-      <script src="scripts/main.js"></script>
-    </body>
-    </html>
+  </main>
+
+  <footer class="bg-A19D9D text-white text-center p-4">
+    © 2024 Abby's Bake House
+  </footer>
+
+  <script src="scripts/load-header.js"></script>
+  <script src="scripts/order-form.js"></script>
+</body>
+</html>

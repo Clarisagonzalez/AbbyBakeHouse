@@ -5,84 +5,144 @@
   <title>Menu - Abby's Bake House</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
+  <style>
+    /* Add any additional custom styles here */
+    .menu-section {
+      margin-bottom: 2rem;
+    }
+    .menu-section h2 {
+      border-bottom: 2px solid #6f8faf; /* Jean color for section headers */
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .menu-item {
+      margin-bottom: 0.5rem;
+    }
+    .menu-item sub {
+      font-size: 0.9rem;
+      color: #6f8faf; /* Jean color for subtext */
+    }
+
+
+    
+  </style>
 </head>
 <body>
-    <!-- Header container to load the header dynamically -->
-    <div id="header-container"></div>
+  <!-- Header container to load the header dynamically -->
+  <div id="header-container"></div>
   
-  <main>
+  <main class="container mx-auto p-4">
     <section id="menu">
-      <h1>Menu</h1>
-      <div id="cakesandpastries">
-        <h2>Cakes and Pastries</h2>
-        <p>Chocolate Fudge Cake</p>
-        <p>Vanilla Bean Cake</p>
-        <p>Red Velvet Cake<sub>All cakes are available as cupcakes.</sub></p>
-        <p>Lemon Tarts</p>
-        <p>Eclairs<sub>Available in chocolate, vanilla, caramel, and hazelnut.</sub></p>
+      <!-- Header Image -->
+      <div class="text-center mb-8">
+        <img src="images/canva/menu.png" alt="Menu Header" class="mx-auto" style="max-width: 50%; height: auto;">
       </div>
-      <div id="cookies">
-        <h2>Cookies</h2>
-        <p>Chocolate Chip</p>
-        <p>Oatmeal Raisin</p>
-        <p>Sugar</p>
-        <p>Peanut Butter</p>
-        <p>Double Chocolate Brownie</p>
-      </div>
-      <div id="donuts">
-        <h2>Donuts</h2>
-        <p>Glazed</p>
-        <p>Chocolate</p>
-        <p>Jelly-Filled</p>
-        <p>Cinnamon Sugar</p>
-        <p>Maple Bacon</p>
-      </div>
-      <div id="specialties">
-        <h2>Specialties</h2>
-        <p>Macarons</p>
-        <p>Brownies</p>
-        <p>Cheescake Slices</p>
-        <p>Fruit Tart</p>
-        <p>Cannoli</p>
-      </div>
-      <div id="breads">
-        <h2>Breads</h2>
-        <p>Sourdough</p>
-        <p>Baguette</p>
-        <p>Ciabatta</p>
-        <p>Focaccia</p>
-        <p>Rye</p>
-      </div>
-      <div id="loavesandrolls">
-        <h2>Loaves and Rolls</h2>
-        <p>Whole Wheat</p>
-        <p>Multigrain</p>
-        <p>Brioche</p>
-        <p>Dinner Rolls</p>
-        <p>Pretzel Rolls</p>
-      </div>
-      <div id="specialtybreads">
-        <h2>Specialty Breads</h2>
-        <p>Banana</p>
-        <p>Zucchini</p>
-        <p>Pumpkin</p>
-        <p>Corn</p>
-        <p>Cinnamon Raisin</p>
-      </div>
-      <div id="bagelsandcroissants">
-        <h2>Bagels and Croissants</h2>
-        <p>Plain Bagel</p>
-        <p>Everything Bagel</p>
-        <p>Blueberry Bagel</p>
-        <p>Plain Croissant</p>
-        <p>Almond Croissant</p>
+      <!-- Menu Content -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Cakes and Pastries -->
+        <div class="menu-category bg-white shadow-md p-4 rounded">
+          <h2 class="text-2xl font-bold mb-4">Cakes and Pastries</h2>
+          <ul class="list-disc list-inside">
+            <li>Chocolate Fudge Cake</li>
+            <li>Vanilla Bean Cake</li>
+            <li>Red Velvet Cake<sub>All cakes are available as cupcakes.</sub></li>
+            <li>Lemon Tarts</li>
+            <li>Eclairs<sub>Available in chocolate, vanilla, caramel, and hazelnut.</sub></li>
+          </ul>
+        </div>
+
+        <!-- Cookies -->
+        <div class="menu-category bg-white shadow-md p-4 rounded">
+          <h2 class="text-2xl font-bold mb-4">Cookies</h2>
+          <ul class="list-disc list-inside">
+            <li>Chocolate Chip</li>
+            <li>Oatmeal Raisin</li>
+            <li>Sugar</li>
+            <li>Peanut Butter</li>
+            <li>Double Chocolate Brownie</li>
+          </ul>
+        </div>
+
+        <!-- Donuts -->
+        <div class="menu-category bg-white shadow-md p-4 rounded">
+          <h2 class="text-2xl font-bold mb-4">Donuts</h2>
+          <ul class="list-disc list-inside">
+            <li>Glazed</li>
+            <li>Chocolate</li>
+            <li>Jelly-Filled</li>
+            <li>Cinnamon Sugar</li>
+            <li>Maple Bacon</li>
+          </ul>
+        </div>
+
+        <!-- Specialties -->
+        <div class="menu-category bg-white shadow-md p-4 rounded">
+          <h2 class="text-2xl font-bold mb-4">Specialties</h2>
+          <ul class="list-disc list-inside">
+            <li>Macarons</li>
+            <li>Brownies</li>
+            <li>Cheesecake Slices</li>
+            <li>Fruit Tart</li>
+            <li>Cannoli</li>
+          </ul>
+        </div>
+
+        <!-- Breads -->
+        <div class="menu-category bg-white shadow-md p-4 rounded">
+          <h2 class="text-2xl font-bold mb-4">Breads</h2>
+          <ul class="list-disc list-inside">
+            <li>Sourdough</li>
+            <li>Baguette</li>
+            <li>Ciabatta</li>
+            <li>Focaccia</li>
+            <li>Rye</li>
+          </ul>
+        </div>
+
+        <!-- Loaves and Rolls -->
+        <div class="menu-category bg-white shadow-md p-4 rounded">
+          <h2 class="text-2xl font-bold mb-4">Loaves and Rolls</h2>
+          <ul class="list-disc list-inside">
+            <li>Whole Wheat</li>
+            <li>Multigrain</li>
+            <li>Brioche</li>
+            <li>Dinner Rolls</li>
+            <li>Pretzel Rolls</li>
+          </ul>
+        </div>
+
+        <!-- Specialty Breads -->
+        <div class="menu-category bg-white shadow-md p-4 rounded">
+          <h2 class="text-2xl font-bold mb-4">Specialty Breads</h2>
+          <ul class="list-disc list-inside">
+            <li>Banana</li>
+            <li>Zucchini</li>
+            <li>Pumpkin</li>
+            <li>Corn</li>
+            <li>Cinnamon Raisin</li>
+          </ul>
+        </div>
+
+        <!-- Bagels and Croissants -->
+        <div class="menu-category bg-white shadow-md p-4 rounded">
+          <h2 class="text-2xl font-bold mb-4">Bagels and Croissants</h2>
+          <ul class="list-disc list-inside">
+            <li>Plain Bagel</li>
+            <li>Everything Bagel</li>
+            <li>Blueberry Bagel</li>
+            <li>Plain Croissant</li>
+            <li>Almond Croissant</li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>
-<footer class="bg-A19D9D text-white text-center p-4">
+  <footer class="bg-A19D9D text-white text-center p-4">
     © 2024 Abby's Bake House
   </footer>
+
   <script src="scripts/load-header.js"></script>
-  <script src="scripts/main.js"></script>
+  <script src="scripts/order-form.js"></script>
 </body>
 </html>
+
