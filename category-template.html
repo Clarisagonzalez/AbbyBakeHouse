@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery - Abby's Bake House</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+  <style>
+    .gallery-img {
+      width: 100%;
+      height: 0;
+      padding-bottom: 100%; /* 1:1 Aspect Ratio */
+      position: relative;
+    }
+
+    .gallery-img img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container mx-auto p-4">
+    <section id="gallery-section">
+      <h1 class="text-4xl font-bold mb-8 text-center" id="category-title"></h1>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="gallery-container">
+        <!-- Images will be populated here by JavaScript -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-A19D9D text-white text-center p-4">
+    © 2024 Abby's Bake House
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  <script src="scripts/load-header.js"></script>
+  <script src="scripts/load-gallery.js"></script>
+</body>
+</html>
+

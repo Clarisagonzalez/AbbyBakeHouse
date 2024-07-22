@@ -18,6 +18,7 @@
       overflow: hidden;
       border-radius: 8px;
       text-decoration: none; /* Remove underline from links */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
     }
     .category-card img {
       position: absolute;
@@ -43,6 +44,11 @@
       font-size: 1.5rem;
       z-index: 2; /* Ensure overlay is on top of the image */
     }
+    /* Hover effect for category cards */
+    .category-card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add a shadow to make it stand out */
+}
   </style>
 </head>
 <body>
@@ -56,30 +62,50 @@
       <!-- Category Cards -->
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <!-- Cakes Category -->
-        <a href="cakes.html" class="category-card bg-white shadow-md">
-          <img src="images\canva\4.png" alt="Cakes">
-          <div class="overlay">Cakes</div>
+        <a href="category-template.html?category=cakes" class="category-card bg-white shadow-md">
+          <img src="images\canva\cakecard.png" alt="Cakes">
+          <div class="overlay"></div>
         </a>
         <!-- Cookies Category -->
-        <a href="cookies.html" class="category-card bg-white shadow-md">
-          <img src="images\canva\3.png" alt="Cookies">
-          <div class="overlay">Cookies</div>
+        <a href="category-template.html?category=cookies" class="category-card bg-white shadow-md">
+          <img src="images\canva\cookiecard.png" alt="Cookies">
+          <div class="overlay"></div>
         </a>
         <!-- Bread Category -->
-        <a href="bread.html" class="category-card bg-white shadow-md">
-          <img src="images\canva\2.png" alt="Bread">
-          <div class="overlay">Bread</div>
+        <a href="category-template.html?category=bread" class="category-card bg-white shadow-md">
+          <img src="images\canva\breadcard.png" alt="Bread">
+          <div class="overlay"></div>
         </a>
-        <!-- Cupcakes Category -->
-        <a href="cupcakes.html" class="category-card bg-white shadow-md">
-          <img src="images\canva\1.png" alt="Cupcakes">
-          <div class="overlay">Cupcakes</div>
+        <!-- donut Category -->
+        <a href="category-template.html?category=donuts" class="category-card bg-white shadow-md">
+          <img src="images\canva\donutcard.png" alt="Donuts">
+          <div class="overlay"></div>
         </a>
-        <!-- Pies Category -->
-        <a href="pies.html" class="category-card bg-white shadow-md">
-          <img src="images\canva\pie.png" alt="Pies">
-          <div class="overlay">Pies</div>
+        <!-- Pastry Category -->
+        <a href="category-template.html?category=pastry" class="category-card bg-white shadow-md">
+          <img src="images\canva\pastrycard.png" alt="Pastries">
+          <div class="overlay"></div>
         </a>
+         <!-- bagel & croissant Category -->
+         <a href="category-template.html?category=bagels" class="category-card bg-white shadow-md">
+            <img src="images\canva\bagelcard.png" alt="bagels">
+            <div class="overlay"></div>
+          </a>
+           <!-- Loaves Category -->
+        <a href="category-template.html?category=loaves" class="category-card bg-white shadow-md">
+            <img src="images\canva\loavescard.png" alt="loaves">
+            <div class="overlay"></div>
+          </a>
+           <!-- special bread Category -->
+        <a href="category-template.html?category=specialbread" class="category-card bg-white shadow-md">
+            <img src="images\canva\specialbreadcard.png" alt="specialbread">
+            <div class="overlay"></div>
+          </a>
+           <!-- specialties Category -->
+        <a href="category-template.html?category=specialties"  class="category-card bg-white shadow-md">
+            <img src="images\canva\specialtiescard.png" alt="specialties">
+            <div class="overlay"></div>
+          </a>
       </div>
     </section>
   </main>
