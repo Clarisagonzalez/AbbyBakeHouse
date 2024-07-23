@@ -22,6 +22,25 @@
       font-size: 0.9rem;
       color: #6f8faf; /* Jean color for subtext */
     }
+    .btn-primary {
+  display: inline-block;
+  background-color: #F0E1D5;
+  color: black;
+  padding: 12px 20px;
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #A19D9D;
+}
+body {
+  min-height: 140vh; /* Adjust the value as needed */
+}
+
 
 
     
@@ -39,93 +58,108 @@
       </div>
       <!-- Menu Content -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Cakes and Pastries -->
-        <div class="menu-category bg-white shadow-md p-4 rounded">
-          <h2 class="text-2xl font-bold mb-4">Cakes and Pastries</h2>
-          <ul class="list-disc list-inside">
-            <li>Chocolate Fudge Cake</li>
-            <li>Vanilla Bean Cake</li>
-            <li>Red Velvet Cake<sub>All cakes are available as cupcakes.</sub></li>
-            <li>Lemon Tarts</li>
-            <li>Eclairs<sub>Available in chocolate, vanilla, caramel, and hazelnut.</sub></li>
-          </ul>
-        </div>
+        <!-- Cupcakes and Pastries -->
+    <div class="menu-category bg-white shadow-md p-4 rounded mb-6">
+      <h1 class="text-4xl font-bold mb-8 text-center">
+        <img src="images/canva/cupcakes.png" alt="Menu" class="w-full">
+      </h1>
+      <ul class="list-disc list-inside">
+        <li class="flex justify-between"><span>Chocolate Fudge Cake</span> <span class="text-gray-600">$35</span></li>
+        <li class="flex justify-between"><span>Vanilla Bean Cake</span> <span class="text-gray-600">$30</span></li>
+        <li class="flex justify-between"><span>Red Velvet Cake<sub>All cakes are available as cupcakes.</sub></span> <span class="text-gray-600">$25</span></li>
+        <li class="flex justify-between"><span>Lemon Tarts</span> <span class="text-gray-600">$5 each</span></li>
+        <li class="flex justify-between"><span>Eclairs<sub>Available in chocolate, vanilla, caramel, and hazelnut.</sub></span> <span class="text-gray-600">$4 each</span></li>
+      </ul>
+    </div>
 
-        <!-- Cookies -->
-        <div class="menu-category bg-white shadow-md p-4 rounded">
-          <h2 class="text-2xl font-bold mb-4">Cookies</h2>
-          <ul class="list-disc list-inside">
-            <li>Chocolate Chip</li>
-            <li>Oatmeal Raisin</li>
-            <li>Sugar</li>
-            <li>Peanut Butter</li>
-            <li>Double Chocolate Brownie</li>
-          </ul>
-        </div>
+    <!-- Cookies -->
+    <div class="menu-category bg-white shadow-md p-4 rounded mb-6">
+      <h1 class="text-4xl font-bold mb-8 text-center">
+        <img src="images/canva/cookies.png" alt="Menu" class="w-full">
+      </h1>
+      <ul class="list-disc list-inside">
+        <li class="flex justify-between"><span>Chocolate Chip</span> <span class="text-gray-600">$1.50 each</span></li>
+        <li class="flex justify-between"><span>Oatmeal Raisin</span> <span class="text-gray-600">$1.75 each</span></li>
+        <li class="flex justify-between"><span>Sugar</span> <span class="text-gray-600">$1.25 each</span></li>
+        <li class="flex justify-between"><span>Peanut Butter</span> <span class="text-gray-600">$1.75 each</span></li>
+        <li class="flex justify-between"><span>Double Chocolate Brownie</span> <span class="text-gray-600">$3.50 each</span></li>
+      </ul>
+    </div>
 
-        <!-- Donuts -->
-        <div class="menu-category bg-white shadow-md p-4 rounded">
-          <h2 class="text-2xl font-bold mb-4">Donuts</h2>
-          <ul class="list-disc list-inside">
-            <li>Glazed</li>
-            <li>Chocolate</li>
-            <li>Jelly-Filled</li>
-            <li>Cinnamon Sugar</li>
-            <li>Maple Bacon</li>
-          </ul>
-        </div>
+    <!-- Donuts -->
+    <div class="menu-category bg-white shadow-md p-4 rounded mb-6">
+      <h1 class="text-4xl font-bold mb-8 text-center">
+        <img src="images/canva/donuts.png" alt="Menu" class="w-full mx-auto">
+      </h1>
+      <ul class="list-disc list-inside">
+        <li class="flex justify-between"><span>Glazed</span> <span class="text-gray-600">$2 each</span></li>
+        <li class="flex justify-between"><span>Chocolate</span> <span class="text-gray-600">$2.50 each</span></li>
+        <li class="flex justify-between"><span>Jelly-Filled</span> <span class="text-gray-600">$3 each</span></li>
+        <li class="flex justify-between"><span>Cinnamon Sugar</span> <span class="text-gray-600">$2.50 each</span></li>
+        <li class="flex justify-between"><span>Maple Bacon</span> <span class="text-gray-600">$3.50 each</span></li>
+      </ul>
+    </div>
 
-        <!-- Specialties -->
-        <div class="menu-category bg-white shadow-md p-4 rounded">
-          <h2 class="text-2xl font-bold mb-4">Specialties</h2>
-          <ul class="list-disc list-inside">
-            <li>Macarons</li>
-            <li>Brownies</li>
-            <li>Cheesecake Slices</li>
-            <li>Fruit Tart</li>
-            <li>Cannoli</li>
-          </ul>
-        </div>
+    <!-- Specialties -->
+<div class="menu-category bg-white shadow-md p-4 rounded mb-6">
+  <h1 class="text-4xl font-bold mb-8 text-center">
+    <img src="images/canva/specialties.png" alt="Menu" class="w-full mx-auto">
+  </h1>
+  <ul class="list-disc list-inside">
+    <li class="flex justify-between"><span class="item-name">Macarons</span> <span class="item-price">$2.50 each</span></li>
+    <li class="flex justify-between"><span class="item-name">Brownies</span> <span class="item-price">$3.00 each</span></li>
+    <li class="flex justify-between"><span class="item-name">Cheesecake Slices</span> <span class="item-price">$4.50 each</span></li>
+    <li class="flex justify-between"><span class="item-name">Fruit Tart</span> <span class="item-price">$5.00 each</span></li>
+    <li class="flex justify-between"><span class="item-name">Cannoli</span> <span class="item-price">$3.50 each</span></li>
+  </ul>
+</div>
 
-        <!-- Breads -->
-        <div class="menu-category bg-white shadow-md p-4 rounded">
-          <h2 class="text-2xl font-bold mb-4">Breads</h2>
-          <ul class="list-disc list-inside">
-            <li>Sourdough</li>
-            <li>Baguette</li>
-            <li>Ciabatta</li>
-            <li>Focaccia</li>
-            <li>Rye</li>
-          </ul>
-        </div>
+    <!-- Breads -->
+    <div class="menu-category bg-white shadow-md p-4 rounded mb-6">
+      <h1 class="text-4xl font-bold mb-8 text-center">
+        <img src="images/canva/breads.png" alt="Menu" class="w-full mx-auto">
+      </h1>
+      <ul class="list-disc list-inside">
+        <li class="flex justify-between"><span>Sourdough</span> <span class="text-gray-600">$6 per loaf</span></li>
+        <li class="flex justify-between"><span>Baguette</span> <span class="text-gray-600">$4 each</span></li>
+        <li class="flex justify-between"><span>Ciabatta</span> <span class="text-gray-600">$5 each</span></li>
+        <li class="flex justify-between"><span>Focaccia</span> <span class="text-gray-600">$7 each</span></li>
+        <li class="flex justify-between"><span>Rye</span> <span class="text-gray-600">$6 per loaf</span></li>
+      </ul>
+    </div>
 
-        <!-- Loaves and Rolls -->
-        <div class="menu-category bg-white shadow-md p-4 rounded">
-          <h2 class="text-2xl font-bold mb-4">Loaves and Rolls</h2>
-          <ul class="list-disc list-inside">
-            <li>Whole Wheat</li>
-            <li>Multigrain</li>
-            <li>Brioche</li>
-            <li>Dinner Rolls</li>
-            <li>Pretzel Rolls</li>
-          </ul>
-        </div>
+    <!-- Loaves and Rolls -->
+    <div class="menu-category bg-white shadow-md p-4 rounded mb-6">
+      <h1 class="text-4xl font-bold mb-8 text-center">
+        <img src="images/canva/loaves.png" alt="Menu" class="w-full mx-auto">
+      </h1>
+      <ul class="list-disc list-inside">
+        <li class="flex justify-between"><span>Whole Wheat</span> <span class="text-gray-600">$4 per loaf</span></li>
+        <li class="flex justify-between"><span>Multigrain</span> <span class="text-gray-600">$5 per loaf</span></li>
+        <li class="flex justify-between"><span>Brioche</span> <span class="text-gray-600">$5 each</span></li>
+        <li class="flex justify-between"><span>Dinner Rolls</span> <span class="text-gray-600">$8 per dozen</span></li>
+        <li class="flex justify-between"><span>Pretzel Rolls</span> <span class="text-gray-600">$10 per dozen</span></li>
+      </ul>
+    </div>
 
-        <!-- Specialty Breads -->
-        <div class="menu-category bg-white shadow-md p-4 rounded">
-          <h2 class="text-2xl font-bold mb-4">Specialty Breads</h2>
-          <ul class="list-disc list-inside">
-            <li>Banana</li>
-            <li>Zucchini</li>
-            <li>Pumpkin</li>
-            <li>Corn</li>
-            <li>Cinnamon Raisin</li>
-          </ul>
-        </div>
+    <!-- Specialty Breads -->
+    <div class="menu-category bg-white shadow-md p-4 rounded mb-6">
+      <h1 class="text-4xl font-bold mb-8 text-center">
+        <img src="images/canva/specialbreads.png" alt="Menu" class="w-full mx-auto">
+      </h1>
+      <ul class="list-disc list-inside">
+        <li class="flex justify-between"><span>Banana Bread</span> <span class="text-gray-600">$8 per loaf</span></li>
+        <li class="flex justify-between"><span>Zucchini Bread</span> <span class="text-gray-600">$9 per loaf</span></li>
+        <li class="flex justify-between"><span>Pumpkin Bread</span> <span class="text-gray-600">$8 per loaf</span></li>
+        <li class="flex justify-between"><span>Corn</span> <span class="text-gray-600">$8 per loaf</span></li>
+      </ul>
+    </div>
 
         <!-- Bagels and Croissants -->
         <div class="menu-category bg-white shadow-md p-4 rounded">
-          <h2 class="text-2xl font-bold mb-4">Bagels and Croissants</h2>
+          <h1 class="text-4xl font-bold mb-8 text-center">
+            <img src="images/canva/bagels.png" alt="Menu" class="w-full mx-auto">
+          </h1>
           <ul class="list-disc list-inside">
             <li>Plain Bagel</li>
             <li>Everything Bagel</li>
@@ -133,6 +167,16 @@
             <li>Plain Croissant</li>
             <li>Almond Croissant</li>
           </ul>
+        </div>
+        <!-- Custom orders-->
+        <div class="menu-category bg-white shadow-md p-4 rounded">
+          <h1 class="text-4xl font-bold mb-8 text-center">
+            <img src="images/canva/custom.png" alt="Menu" class="w-full mx-auto">
+          </h1>
+          <p class="text-lg mb-4" style="font-family: 'Poppins', sans-serif;">For any customizations or bulk orders, please click here to provide details.</p>
+          <a href="order.html" class="btn btn-primary">Click Here</a>
+            
+        
         </div>
       </div>
     </section>
