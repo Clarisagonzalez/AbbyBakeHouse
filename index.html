@@ -5,15 +5,20 @@
   <title>Abby's Bake House</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <!-- Header container to load the header dynamically -->
     <div id="header-container"></div>
     
     <main class="container mx-auto p-4">
-        <section id="home" class="flex flex-col items-center">
-          <img src="images\canva\logo.png" alt="Abby's Bake House Logo" class="w-96 mx-auto">
-          <img src="images\canva\goods2.png" alt="Bakery Image" class="mx-auto mt-4">
+        <section id="home" class="flex flex-col items-center space-y-4 p-0">
+          <img src="images/canva/logo.png" alt="Abby's Bake House Logo" class="w-150 mx-auto my-0" style="margin: 10px 0;">
+          <img src="images/canva/goods2.png" alt="Bakery Image" class="mx-auto my-0" style="margin-top: 0;">
+          <!-- Button container -->
+          <div class="mt-4">
+            <button id="orderButton" style="background-color: #a38f8b; color: #f1eeeb; padding: 5px 20px; font-size: 16px; border: none; border-radius: 20px; cursor: pointer; margin-bottom: 10%;">Start Ordering</button>
+          </div>
         </section>
     </main>
     <footer class="bg-A19D9D text-white text-center p-4">
@@ -23,31 +28,10 @@
     <script src="scripts/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Create a button element
-            var button = document.createElement('button');
-            button.innerHTML = 'Order Now';
-            
-            // Style the button
-            button.style.bottom = '20px';
-            button.style.left = '50%';
-            button.style.transform = 'translateX(-50%)';
-            button.style.padding = '5px 20px';
-            button.style.fontSize = '16px';
-            button.style.backgroundColor = '#a38f8b';
-            button.style.color = '#f1eeeb';
-            button.style.border = 'none';
-            button.style.borderRadius = '20px';
-            button.style.cursor = 'pointer';
-            button.style.marginLeft = '50%';
-            button.style.marginBottom = '10%';
-            
             // Add event listener to redirect to "the shop" page
-            button.addEventListener('click', function() {
+            document.getElementById('orderButton').addEventListener('click', function() {
                 window.location.href = 'theshop.html';
             });
-
-            // Append the button to the body
-            document.body.appendChild(button);
         });
     </script>
 </body>
