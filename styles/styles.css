@@ -64,15 +64,21 @@ body {
   }
   
   .add-to-cart {
-    background-color: #A19D9D;
-    color: white;
+    background-color: #f0c5c5;
+    color: rgb(255, 255, 255);
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 /*Button for Category.js*/
+
+
+
+
+
+
 .add-to-cart:hover {
-    background-color: #eb4d9c;
+    background-color: #e790bc;
 }
 
