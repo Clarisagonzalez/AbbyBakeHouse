@@ -2,44 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Category - Abby's Bake House</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    .btn-primary {
-      display: inline-block;
-      background-color: #A19D9D;
-      color: white;
-      padding: 8px 16px;
-      border-radius: 4px;
-      text-align: center;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+        }
 
-    .btn-primary:hover {
-      background-color: #8A7E7E;
-    }
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .product-description {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .quantity-selector button {
+            background-color: #ccc;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .quantity-selector input {
+            width: 50px;
+            text-align: center;
+            margin: 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
   </style>
 </head>
 <body>
   <!-- Header container to load the header dynamically -->
   <div id="header-container"></div>
 
-  <main class="container mx-auto p-4">
-    <h1 id="category-title" class="text-3xl font-bold mb-6 text-center"></h1>
-    <div id="gallery-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <!-- Items will be dynamically loaded here -->
+  <main class="max-w-4xl mx-auto py-8">
+    <h1 class="text-3xl font-bold text-center mb-8" id="category-title">Category</h1>
+    <div id="gallery-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Products will be dynamically inserted here -->
     </div>
-  </main>
+</main>
 
   <footer class="bg-A19D9D text-white text-center p-4">
     © 2024 Abby's Bake House
   </footer>
 
   <script src="scripts/load-header.js"></script>
-  <script src="scripts/category.js"></script>
-  <script src="scripts/cart.js"></script>
+  <script src="scripts/shopcategory.js"></script>
 </body>
 </html>

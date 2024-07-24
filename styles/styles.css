@@ -63,3 +63,16 @@ body {
     width: 100%;
   }
   
+  .add-to-cart {
+    background-color: #A19D9D;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*Button for Category.js*/
+.add-to-cart:hover {
+    background-color: #eb4d9c;
+}
+
