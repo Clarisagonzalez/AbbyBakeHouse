@@ -1,9 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const category = params.get('category');
     const categories = {
-      cakes: {
-        title: 'Cakes Shop',
+      cupcakes: {
+        title: 'Cupcakes Shop',
         images: ['images/cakes/cake1.jpg', 'images/cakes/cake2.jpg', 'images/cakes/pinkcake.jpg'] // Add more images as needed
       },
       cookies: {
@@ -60,4 +60,4 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('category-title').textContent = 'Category Not Found';
     }
   });
-  
+  */

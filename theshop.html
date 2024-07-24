@@ -5,20 +5,20 @@
   <title>The Shop - Abby's Bake House</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* Ensure category cards are square and centered */
     .category-card {
       width: 100%;
       height: 0;
-      padding-bottom: 100%; /* Creates a square aspect ratio */
+      padding-bottom: 100%;
       position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
       overflow: hidden;
       border-radius: 8px;
-      text-decoration: none; /* Remove underline from links */
-      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .category-card img {
       position: absolute;
@@ -27,7 +27,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: 1; /* Ensure image is below overlay */
+      z-index: 1;
     }
     .category-card .overlay {
       position: absolute;
@@ -36,78 +36,71 @@
       width: 100%;
       height: 100%;
       background: rgba(244, 194, 194, 0.3);
-      color:  #333333; /* Dark gray text color */
+      color: #333333;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
       font-size: 1.5rem;
-      z-index: 2; /* Ensure overlay is on top of the image */
+      z-index: 2;
     }
-    /* Hover effect for category cards */
     .category-card:hover {
-  transform: scale(1.05); /* Slightly enlarge the card */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add a shadow to make it stand out */
-}
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+    .no-underline {
+      text-decoration: none;
+    }
+    .no-underline:hover {
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
-  <!-- Header container to load the header dynamically -->
   <div id="header-container"></div>
 
   <main class="container mx-auto p-4">
     <section id="gallery">
-      <!-- Header Image -->
       <div class="text-center mb-8">
-        <img src="images/canva/gallery.png" alt="Menu Header" class="mx-auto" style="max-width: 50%; height: auto;">
+        <img src="images/canva/theshop.png" alt="Menu Header" class="mx-auto" style="max-width: 50%; height: auto;">
       </div>
-      <!-- Category Cards -->
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <!-- Cakes Category -->
-        <a href="category-template.html?category=cakes" class="category-card bg-white shadow-md">
-          <img src="images\canva\cakecard.png" alt="Cakes">
+        <a href="category-template.html?category=cupcakes" class="category-card bg-white shadow-md no-underline">
+          <img src="images/canva/cupcakecard.png" alt="Cupcakes">
           <div class="overlay"></div>
         </a>
-        <!-- Cookies Category -->
-        <a href="category-template.html?category=cookies" class="category-card bg-white shadow-md">
-          <img src="images\canva\cookiecard.png" alt="Cookies">
+        <a href="category-template.html?category=cookies" class="category-card bg-white shadow-md no-underline">
+          <img src="images/canva/cookiecard.png" alt="Cookies">
           <div class="overlay"></div>
         </a>
-        <!-- Bread Category -->
-        <a href="category-template.html?category=bread" class="category-card bg-white shadow-md">
-          <img src="images\canva\breadcard.png" alt="Bread">
+        <a href="category-template.html?category=bread" class="category-card bg-white shadow-md no-underline">
+          <img src="images/canva/breadcard.png" alt="Bread">
           <div class="overlay"></div>
         </a>
-        <!-- donut Category -->
-        <a href="category-template.html?category=donuts" class="category-card bg-white shadow-md">
-          <img src="images\canva\donutcard.png" alt="Donuts">
+        <a href="category-template.html?category=donuts" class="category-card bg-white shadow-md no-underline">
+          <img src="images/canva/donutcard.png" alt="Donuts">
           <div class="overlay"></div>
         </a>
-        <!-- Pastry Category -->
-        <a href="category-template.html?category=pastry" class="category-card bg-white shadow-md">
-          <img src="images\canva\pastrycard.png" alt="Pastries">
+        <a href="category-template.html?category=pastry" class="category-card bg-white shadow-md no-underline">
+          <img src="images/canva/pastrycard.png" alt="Pastries">
           <div class="overlay"></div>
         </a>
-         <!-- bagel & croissant Category -->
-         <a href="category-template.html?category=bagels" class="category-card bg-white shadow-md">
-            <img src="images\canva\bagelcard.png" alt="bagels">
-            <div class="overlay"></div>
-          </a>
-           <!-- Loaves Category -->
-        <a href="category-template.html?category=loaves" class="category-card bg-white shadow-md">
-            <img src="images\canva\loavescard.png" alt="loaves">
-            <div class="overlay"></div>
-          </a>
-           <!-- special bread Category -->
-        <a href="category-template.html?category=specialbread" class="category-card bg-white shadow-md">
-            <img src="images\canva\specialbreadcard.png" alt="specialbread">
-            <div class="overlay"></div>
-          </a>
-           <!-- specialties Category -->
-        <a href="category-template.html?category=specialties"  class="category-card bg-white shadow-md">
-            <img src="images\canva\specialtiescard.png" alt="specialties">
-            <div class="overlay"></div>
-          </a>
+        <a href="category-template.html?category=bagels" class="category-card bg-white shadow-md no-underline">
+          <img src="images/canva/bagelcard.png" alt="Bagels">
+          <div class="overlay"></div>
+        </a>
+        <a href="category-template.html?category=loaves" class="category-card bg-white shadow-md no-underline">
+          <img src="images/canva/loavescard.png" alt="Loaves">
+          <div class="overlay"></div>
+        </a>
+        <a href="category-template.html?category=specialbread" class="category-card bg-white shadow-md no-underline">
+          <img src="images/canva/specialbreadcard.png" alt="Special Bread">
+          <div class="overlay"></div>
+        </a>
+        <a href="category-template.html?category=specialties" class="category-card bg-white shadow-md no-underline">
+          <img src="images/canva/specialtiescard.png" alt="Specialties">
+          <div class="overlay"></div>
+        </a>
       </div>
     </section>
   </main>
