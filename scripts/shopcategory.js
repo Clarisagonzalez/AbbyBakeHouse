@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cookies: {
           title: 'Cookies Shop',
           items: [
-              { name: 'Chocolate Chip Cookie', price: 1.5, image: 'images/cookies/Chocolate Chip Cookie.jpg' },
+              { name: 'Chocolate Chip Cookie', price: 1.5, image: 'images/cookies/Chocolate Chip Cookie.png' },
               { name: 'Oatmeal Raisin', price: 1.75, image: 'images/cookies/Oatmeal Raisin Cookie.png' },
               { name: 'Peanut Butter Cookie', price: 1.75, image: 'images/cookies/peanut butter cookie.png' },
               { name: 'Sugar Cookie', price: 1.25, image: 'images/cookies/Sugar cookie.png' },
@@ -62,30 +62,30 @@ document.addEventListener('DOMContentLoaded', () => {
     loaves: {
       title: 'Loaves and Rolls Shop',
       items: [
-        { name: 'Whole Wheat', price: 4.00, image: 'images/breads/sourdough.jpg' },
-       { name: 'Multigrain', price: 5.00, image: 'images/breads/whole-wheat.jpg' },
-        { name: 'Brioche', price: 5.00, image: 'images/breads/rye-bread.jpg' },
-        { name: 'Dinner Rolls', price: 8.00, image: 'images/breads/whole-wheat.jpg' },
-        { name: 'Pretzel Rolls', price: 10.00, image: 'images/breads/rye-bread.jpg' }
+        { name: 'Whole Wheat', price: 4.00, image: 'images/loavesandrolls/whole wheat loaf.png' },
+       { name: 'Multigrain', price: 5.00, image: 'images/loavesandrolls/multigrain loaf.png' },
+        { name: 'Brioche', price: 5.00, image: 'images/loavesandrolls/brioche loaf.png' },
+        { name: 'Dinner Rolls', price: 8.00, image: 'images/loavesandrolls/dinner rolls.png' },
+        { name: 'Pretzel Rolls', price: 10.00, image: 'images/loavesandrolls/pretzel rolls.png' }
       ]
     },
     specialbread: {
       title: 'Specialty Breads Shop',
       items: [
-        { name: 'Banana Bread', price: 8.00, image: 'images/specialbread/bananabr.jpg' },
-       { name: 'Zucchini Bread', price: 9.00, image: 'images/breads/whole-wheat.jpg' },
-        { name: 'Pumpkin Bread', price: 8.00, image: 'images/breads/rye-bread.jpg' },
-        { name: 'Corn Bread', price: 8.00, image: 'images/breads/rye-bread.jpg' }
+        { name: 'Banana Bread', price: 8.00, image: 'images/specialbread/banana bread.png' },
+       { name: 'Zucchini Bread', price: 9.00, image: 'images/specialbread/zucchini bread.png' },
+        { name: 'Pumpkin Bread', price: 8.00, image: 'images/specialbread/pumpkin bread.png' },
+        { name: 'Corn Bread', price: 8.00, image: 'images/specialbread/corn bread.png' }
       ]
     },
     specialties: {
       title: 'Specialties Shop',
       items: [
-        { name: 'Macarons', price: 2.50, image: 'images/breads/sourdough.jpg' },
-       { name: 'Brownies', price: 3.00, image: 'images/breads/whole-wheat.jpg' },
-        { name: 'Cheesecake Slices', price: 4.50, image: 'images/breads/rye-bread.jpg' },
-        { name: 'Fruit Tart', price: 5.00, image: 'images/breads/whole-wheat.jpg' },
-        { name: 'Cannoli', price: 3.50, image: 'images/breads/rye-bread.jpg' }
+        { name: 'Macarons', price: 2.50, image: 'images/specialties/macarons.png' },
+       { name: 'Brownies', price: 3.00, image: 'images/specialties/brownie.png' },
+        { name: 'Cheesecake Slices', price: 4.50, image: 'images/specialties/cheesecake.png' },
+        { name: 'Fruit Tart', price: 5.00, image: 'images/specialties/fruit tart.png' },
+        { name: 'Cannoli', price: 3.50, image: 'images/specialties/cannolis.png' }
       ]
     },
   
