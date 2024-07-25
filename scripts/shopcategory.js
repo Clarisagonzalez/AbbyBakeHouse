@@ -6,57 +6,57 @@ document.addEventListener('DOMContentLoaded', () => {
       cupcakes: {
           title: 'Cupcakes Shop',
           items: [
-              { name: 'Chocolate Fudge', price: 4.00, image: 'images/cupcakes/chocolate-fudge.jpg' },
-              { name: 'Vanilla Bean', price: 4.00, image: 'images/cupcakes/vanilla-bean.jpg' },
-              { name: 'Red Velvet', price: 4.00, image: 'images/cupcakes/red-velvet.jpg' }
+              { name: 'Chocolate Fudge', price: 4.00, image: 'images/cupcakes/chocolate fudge cupcake.png' },
+              { name: 'Vanilla Bean', price: 4.00, image: 'images/cupcakes/vanilla bean cupcake.png' },
+              { name: 'Red Velvet', price: 4.00, image: 'images/cupcakes/red velvet cupcake.png' }
           ]
       },
       cookies: {
           title: 'Cookies Shop',
           items: [
-              { name: 'Chocolate Chip Cookie', price: 1.5, image: 'images/cookies/cc-cookie.jpg' },
-              { name: 'Oatmeal Raisin', price: 1.75, image: 'images/cookies/oatmeal-cookie.jpg' },
-              { name: 'Peanut Butter Cookie', price: 1.75, image: 'images/cookies/peanut-butter-cookie.jpg' },
-              { name: 'Sugar Cookie', price: 1.25, image: 'images/cookies/oatmeal-cookie.jpg' },
-              { name: 'Double Chocolate Brownie', price: 3.5, image: 'images/cookies/peanut-butter-cookie.jpg' }
+              { name: 'Chocolate Chip Cookie', price: 1.5, image: 'images/cookies/Chocolate Chip Cookie.jpg' },
+              { name: 'Oatmeal Raisin', price: 1.75, image: 'images/cookies/Oatmeal Raisin Cookie.png' },
+              { name: 'Peanut Butter Cookie', price: 1.75, image: 'images/cookies/peanut butter cookie.png' },
+              { name: 'Sugar Cookie', price: 1.25, image: 'images/cookies/Sugar cookie.png' },
+              { name: 'Double Chocolate Brownie', price: 3.5, image: 'images/cookies/Double Chocolate Brownie cookie.png' }
           ]
       },
       bread: {
         title: 'Breads Shop',
         items: [
-          { name: 'Sourdough', price: 6.00, image: 'images/breads/sourdough.jpg' },
-          { name: 'Baguette', price: 4.00, image: 'images/breads/whole-wheat.jpg' },
-          { name: 'Rye Bread', price: 6.00, image: 'images/breads/rye-bread.jpg' },
-          { name: 'Ciabatta', price: 5.00, image: 'images/breads/whole-wheat.jpg' },
-          { name: 'Focaccia', price: 7.00, image: 'images/breads/rye-bread.jpg' }
+          { name: 'Sourdough', price: 6.00, image: 'images/breads/sourdough bread.png' },
+          { name: 'Baguette', price: 4.00, image: 'images/breads/baguette bread.png' },
+          { name: 'Rye Bread', price: 6.00, image: 'images/breads/rye bread.png' },
+          { name: 'Ciabatta', price: 5.00, image: 'images/breads/ciabatta bread.png' },
+          { name: 'Focaccia', price: 7.00, image: 'images/breads/focaccia bread.png' }
       ]
     },
     donuts: {
       title: 'Donuts Shop',
       items: [
-        { name: 'Glazed', price: 2.00, image: 'images/breads/sourdough.jpg' },
-       { name: 'Chocolate', price: 2.50, image: 'images/breads/whole-wheat.jpg' },
-        { name: 'Jelly-Filled', price: 3.00, image: 'images/breads/rye-bread.jpg' },
-        { name: 'Cinnamon Sugar', price: 2.50, image: 'images/breads/whole-wheat.jpg' },
-        { name: 'Maple Bacon', price: 3.50, image: 'images/breads/rye-bread.jpg' }
+        { name: 'Glazed', price: 2.00, image: 'images/donuts/glazed donut.png' },
+       { name: 'Chocolate', price: 2.50, image: 'images/donuts/chocolate donut.png' },
+        { name: 'Jelly-Filled', price: 3.00, image: 'images/donuts/jelly-filled donut.png' },
+        { name: 'Cinnamon Sugar', price: 2.50, image: 'images/donuts/cinnamon sugar donut.png' },
+        { name: 'Maple Bacon', price: 3.50, image: 'images/donuts/maple bacon donut.png' }
       ]
     },
     pastry: {
       title: 'Pastry Shop',
       items: [
-        { name: 'Lemon Tarts', price: 5.00, image: 'images/breads/sourdough.jpg' },
-       { name: 'Eclairs', price: 4.00, image: 'images/breads/whole-wheat.jpg' }
+        { name: 'Lemon Tarts', price: 5.00, image: 'images/pastries/lemon tart.png' },
+       { name: 'Eclairs', price: 4.00, image: 'images/pastries/eclaire.png' }
         
       ]
     },
     bagels: {
       title: 'Bagels and Croissants Shop',
       items: [
-        { name: 'Plain Bagel', price: 2.00, image: 'images/breads/sourdough.jpg' },
-       { name: 'Everything Bagel', price: 2.50, image: 'images/breads/whole-wheat.jpg' },
-        { name: 'Blueberry Bagel', price: 2.50, image: 'images/breads/rye-bread.jpg' },
-        { name: 'Plain Croissant', price: 2.00, image: 'images/breads/whole-wheat.jpg' },
-        { name: 'Almond Croissant', price: 2.00, image: 'images/breads/rye-bread.jpg' }
+        { name: 'Plain Bagel', price: 2.00, image: 'images/bagelscroissants/plain bagel.png' },
+       { name: 'Everything Bagel', price: 2.50, image: 'images/bagelscroissants/everything bagel.png' },
+        { name: 'Blueberry Bagel', price: 2.50, image: 'images/bagelscroissants/blueberry bagel.png' },
+        { name: 'Plain Croissant', price: 2.00, image: 'images/bagelscroissants/plain croissant.png' },
+        { name: 'Almond Croissant', price: 2.00, image: 'images/bagelscroissants/almond croissant.png' }
       ]
     },
     loaves: {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     specialbread: {
       title: 'Specialty Breads Shop',
       items: [
-        { name: 'Banana Bread', price: 8.00, image: 'images/breads/sourdough.jpg' },
+        { name: 'Banana Bread', price: 8.00, image: 'images/specialbread/bananabr.jpg' },
        { name: 'Zucchini Bread', price: 9.00, image: 'images/breads/whole-wheat.jpg' },
         { name: 'Pumpkin Bread', price: 8.00, image: 'images/breads/rye-bread.jpg' },
         { name: 'Corn Bread', price: 8.00, image: 'images/breads/rye-bread.jpg' }
