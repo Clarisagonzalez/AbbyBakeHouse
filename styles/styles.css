@@ -1,37 +1,43 @@
 /* Basic styles for the site */
 body {
-    font-family: Arial, sans-serif;
     background-color: #E8D4CD;  /* Use a light color for background */
     color: #333;  /* Standard text color */
     margin: 0;
     padding: 0;
   }
-  
   header {
     background-color: #A19D9D;  /* Slightly darker color for the header */
     padding: 10px 0;
+    font-family: 'Poppins', sans-serif;
   }
+
   
   nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    gap: 20px;
   }
   
   nav ul li {
-    margin: 0 15px;
+    margin: 0;
   }
   
   nav ul li a {
     text-decoration: none;
     color: #FFFFFF;  /* White text for navigation links */
+    transition: color 0.3s ease;
   }
+  nav ul li a:hover,
+nav ul li a:focus {
+    color: #F8E6E6; /* Light pink color on hover/focus */
+}
   
-  nav ul li a:hover {
-    text-decoration: underline;
-  }
+
+  
+  
+
   
   main {
     padding: 20px;
@@ -72,13 +78,7 @@ body {
     cursor: pointer;
 }
 /*Button for Category.js*/
-
-
-
-
-
-
 .add-to-cart:hover {
-    background-color: #e790bc;
+    background-color: #ff85c1;
 }
 

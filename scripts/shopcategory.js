@@ -146,6 +146,10 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
       document.getElementById('category-title').textContent = 'Category Not Found';
   }
+  // Handle back button
+  document.getElementById('back-button').addEventListener('click', () => {
+    window.history.back();
+});
 
   function addToCart(name, price, quantity) {
       const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
