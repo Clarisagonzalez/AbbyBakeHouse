@@ -143,9 +143,21 @@ document.addEventListener('DOMContentLoaded', () => {
               addToCart(itemName, itemPrice, quantity);
           });
       });
+              // Add "Go to Cart" button
+              const goToCartButton = document.createElement('button');
+              goToCartButton.id = 'go-to-cart-btn';
+              goToCartButton.classList.add('bg-A19D9D', 'text-white', 'p-2', 'rounded', 'mt-4');
+              goToCartButton.textContent = 'Go to Cart';
+              galleryContainer.appendChild(goToCartButton);
+      
+              goToCartButton.addEventListener('click', () => {
+                  window.location.href = 'cart.html';
+              });
+      
   } else {
       document.getElementById('category-title').textContent = 'Category Not Found';
   }
+  
   // Handle back button
   document.getElementById('back-button').addEventListener('click', () => {
     window.history.back();
