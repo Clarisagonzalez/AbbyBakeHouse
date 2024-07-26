@@ -1,13 +1,31 @@
-// cart-summary.js
+// Function to add an item to the cart
+function addToCart(item) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(item);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    
+    // Display "Go to Cart" button when item is added
+    document.getElementById('go-to-cart').style.display = 'block';
+}
 
-// Sample data for demonstration purposes
-const cartItems = [
-    { name: "Chocolate Fudge Cake", price: 35 },
-    { name: "Vanilla Bean Cake", price: 30 },
-    { name: "Red Velvet Cake", price: 25 },
-    { name: "Lemon Tarts", price: 5 },
-    { name: "Eclairs", price: 4 },
-];
+// Function to get cart items
+function getCart() {
+    return JSON.parse(localStorage.getItem('cart')) || [];
+}
+
+// Function to remove an item from the cart
+function removeFromCart(index) {
+    let cart = getCart();
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCartItems(getCart()); // Re-render cart items
+}
+
+// Function to clear the cart
+function clearCart() {
+    localStorage.removeItem('cart');
+    renderCartItems([]); // Clear cart items
+}
 
 // Function to format price as currency
 function formatPrice(price) {
@@ -17,11 +35,16 @@ function formatPrice(price) {
 // Function to render cart items
 function renderCartItems(items) {
     const cartSummaryItems = document.getElementById('cart-summary-items');
+    cartSummaryItems.innerHTML = ''; // Clear existing items
     let total = 0;
     
-    items.forEach(item => {
+    items.forEach((item, index) => {
         const listItem = document.createElement('li');
-        listItem.innerHTML = `<span>${item.name}</span> <span>$${formatPrice(item.price)}</span>`;
+        listItem.innerHTML = `
+            <span>${item.name}</span> 
+            <span>$${formatPrice(item.price)}</span>
+            <button onclick="removeFromCart(${index})">Remove</button>
+        `;
         cartSummaryItems.appendChild(listItem);
         total += item.price;
     });
@@ -37,7 +60,9 @@ function handleCheckout() {
 }
 
 // Initial rendering of cart items
-renderCartItems(cartItems);
+document.addEventListener('DOMContentLoaded', function() {
+    renderCartItems(getCart());
+});
 
 // Add event listener for checkout button
 document.getElementById('checkout-btn').addEventListener('click', handleCheckout);
