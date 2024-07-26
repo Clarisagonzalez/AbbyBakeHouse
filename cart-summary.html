@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart Summary</title>
+    <title>Cart Summary - Abby's Bake House</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f4f4f4;
+            background-color: #ffeded;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-
+        main {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        h1 {
+            color: #A38F8B;
+        }
         .cart-summary-container {
             max-width: 800px;
             margin: 20px auto;
@@ -23,19 +32,11 @@
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
         .cart-summary-items {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-
         .cart-summary-items li {
             display: flex;
             justify-content: space-between;
@@ -43,14 +44,12 @@
             padding: 10px;
             border-bottom: 1px solid #ddd;
         }
-
         .cart-summary-total {
             margin-top: 20px;
             font-size: 1.5rem;
             font-weight: bold;
             text-align: center;
         }
-
         #checkout-btn {
             background-color: pink;
             color: white;
@@ -64,9 +63,14 @@
             width: 100%;
             text-align: center;
         }
-
         #checkout-btn:hover {
             background-color: rgb(165, 90, 103);
+        }
+        footer {
+            background-color: #A19D9D;
+            color: white;
+            text-align: center;
+            padding: 4px;
         }
     </style>
 </head>
@@ -91,7 +95,7 @@
     </footer>
 
     <script src="scripts/load-header.js"></script>
+    <script src="scripts/cart.min.js"></script>
     <script type="module" src="scripts/cart-summary.js"></script>
 </body>
 </html>
-

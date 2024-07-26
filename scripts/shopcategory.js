@@ -1,4 +1,4 @@
-import { addToCart } from './cart.js';
+import { addToCart } from './cart-summary.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
@@ -34,64 +34,62 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         donuts: {
-          title: 'Donuts Shop',
-          items: [
-              { name: 'Glazed', price: 2.00, image: 'images/donuts/glazed donut.png' },
-              { name: 'Chocolate', price: 2.50, image: 'images/donuts/chocolate donut.png' },
-              { name: 'Jelly-Filled', price: 3.00, image: 'images/donuts/jelly-filled donut.png' },
-              { name: 'Cinnamon Sugar', price: 2.50, image: 'images/donuts/cinnamon sugar donut.png' },
-              { name: 'Maple Bacon', price: 3.50, image: 'images/donuts/maple bacon donut.png' }
-          ]
-      },
-      pastry: {
-          title: 'Pastry Shop',
-          items: [
-              { name: 'Lemon Tarts', price: 5.00, image: 'images/pastries/lemon tart.png' },
-              { name: 'Eclairs', price: 4.00, image: 'images/pastries/eclaire.png' }
-          ]
-      },
-      bagels: {
-          title: 'Bagels and Croissants Shop',
-          items: [
-              { name: 'Plain Bagel', price: 2.00, image: 'images/bagelscroissants/plain bagel.png' },
-              { name: 'Everything Bagel', price: 2.50, image: 'images/bagelscroissants/everything bagel.png' },
-              { name: 'Blueberry Bagel', price: 2.50, image: 'images/bagelscroissants/blueberry bagel.png' },
-              { name: 'Plain Croissant', price: 2.00, image: 'images/bagelscroissants/plain croissant.png' },
-              { name: 'Almond Croissant', price: 2.00, image: 'images/bagelscroissants/almond croissant.png' }
-          ]
-      },
-      loaves: {
-          title: 'Loaves and Rolls Shop',
-          items: [
-              { name: 'Whole Wheat', price: 4.00, image: 'images/loavesandrolls/whole wheat loaf.png' },
-              { name: 'Multigrain', price: 5.00, image: 'images/loavesandrolls/multigrain loaf.png' },
-              { name: 'Brioche', price: 5.00, image: 'images/loavesandrolls/brioche loaf.png' },
-              { name: 'Dinner Rolls', price: 8.00, image: 'images/loavesandrolls/dinner rolls.png' },
-              { name: 'Pretzel Rolls', price: 10.00, image: 'images/loavesandrolls/pretzel rolls.png' }
-          ]
-      },
-      specialbread: {
-          title: 'Specialty Breads Shop',
-          items: [
-              { name: 'Banana Bread', price: 8.00, image: 'images/specialbread/banana bread.png' },
-              { name: 'Zucchini Bread', price: 9.00, image: 'images/specialbread/zucchini bread.png' },
-              { name: 'Pumpkin Bread', price: 8.00, image: 'images/specialbread/pumpkin bread.png' },
-              { name: 'Corn Bread', price: 8.00, image: 'images/specialbread/corn bread.png' }
-          ]
-      },
-      specialties: {
-          title: 'Specialties Shop',
-          items: [
-              { name: 'Macarons', price: 2.50, image: 'images/specialties/macarons.png' },
-              { name: 'Brownies', price: 3.00, image: 'images/specialties/brownie.png' },
-              { name: 'Cheesecake Slices', price: 4.50, image: 'images/specialties/cheesecake.png' },
-              { name: 'Fruit Tart', price: 5.00, image: 'images/specialties/fruit tart.png' },
-              { name: 'Cannoli', price: 3.50, image: 'images/specialties/cannolis.png' }
-          ]
-      }
-  };
-        // Add other categories similarly...
-
+            title: 'Donuts Shop',
+            items: [
+                { id: '14', name: 'Glazed', price: 2.00, image: 'images/donuts/glazed donut.png' },
+                { id: '15', name: 'Chocolate', price: 2.50, image: 'images/donuts/chocolate donut.png' },
+                { id: '16', name: 'Jelly-Filled', price: 3.00, image: 'images/donuts/jelly-filled donut.png' },
+                { id: '17', name: 'Cinnamon Sugar', price: 2.50, image: 'images/donuts/cinnamon sugar donut.png' },
+                { id: '18', name: 'Maple Bacon', price: 3.50, image: 'images/donuts/maple bacon donut.png' }
+            ]
+        },
+        pastry: {
+            title: 'Pastry Shop',
+            items: [
+                { id: '19', name: 'Lemon Tarts', price: 5.00, image: 'images/pastries/lemon tart.png' },
+                { id: '20', name: 'Eclairs', price: 4.00, image: 'images/pastries/eclaire.png' }
+            ]
+        },
+        bagels: {
+            title: 'Bagels and Croissants Shop',
+            items: [
+                { id: '21', name: 'Plain Bagel', price: 2.00, image: 'images/bagelscroissants/plain bagel.png' },
+                { id: '22', name: 'Everything Bagel', price: 2.50, image: 'images/bagelscroissants/everything bagel.png' },
+                { id: '23', name: 'Blueberry Bagel', price: 2.50, image: 'images/bagelscroissants/blueberry bagel.png' },
+                { id: '24', name: 'Plain Croissant', price: 2.00, image: 'images/bagelscroissants/plain croissant.png' },
+                { id: '25', name: 'Almond Croissant', price: 2.00, image: 'images/bagelscroissants/almond croissant.png' }
+            ]
+        },
+        loaves: {
+            title: 'Loaves and Rolls Shop',
+            items: [
+                { id: '26', name: 'Whole Wheat', price: 4.00, image: 'images/loavesandrolls/whole wheat loaf.png' },
+                { id: '27', name: 'Multigrain', price: 5.00, image: 'images/loavesandrolls/multigrain loaf.png' },
+                { id: '28', name: 'Brioche', price: 5.00, image: 'images/loavesandrolls/brioche loaf.png' },
+                { id: '29', name: 'Dinner Rolls', price: 8.00, image: 'images/loavesandrolls/dinner rolls.png' },
+                { id: '30', name: 'Pretzel Rolls', price: 10.00, image: 'images/loavesandrolls/pretzel rolls.png' }
+            ]
+        },
+        specialbread: {
+            title: 'Specialty Breads Shop',
+            items: [
+                { id: '31', name: 'Banana Bread', price: 8.00, image: 'images/specialbread/banana bread.png' },
+                { id: '32', name: 'Zucchini Bread', price: 9.00, image: 'images/specialbread/zucchini bread.png' },
+                { id: '33', name: 'Pumpkin Bread', price: 8.00, image: 'images/specialbread/pumpkin bread.png' },
+                { id: '34', name: 'Corn Bread', price: 8.00, image: 'images/specialbread/corn bread.png' }
+            ]
+        },
+        specialties: {
+            title: 'Specialties Shop',
+            items: [
+                { id: '35', name: 'Macarons', price: 2.50, image: 'images/specialties/macarons.png' },
+                { id: '36', name: 'Brownies', price: 3.00, image: 'images/specialties/brownie.png' },
+                { id: '37', name: 'Cheesecake Slices', price: 4.50, image: 'images/specialties/cheesecake.png' },
+                { id: '38', name: 'Fruit Tart', price: 5.00, image: 'images/specialties/fruit tart.png' },
+                { id: '39', name: 'Cannoli', price: 3.50, image: 'images/specialties/cannolis.png' }
+            ]
+        }
+    };
 
     const categoryData = categories[category];
     if (categoryData) {
@@ -153,6 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
 
                 addToCart(item);
+
+                // Show "Go to Cart" button
+                document.getElementById('go-to-cart').style.display = 'block';
             });
         });
     } else {

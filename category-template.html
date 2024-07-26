@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Category - Abby's Bake House</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category - Abby's Bake House</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #ffeded;
@@ -18,18 +18,17 @@
             flex-direction: column;
         }
         .category-title {
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: #A38F8B;
-      text-align: center;
-      margin-bottom: 20px;
-    }
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #A38F8B;
+            text-align: center;
+            margin-bottom: 20px;
+        }
         .category-main {
-    padding: 20px;
-    padding-top: 4rem; 
-    padding-bottom: 135px; 
-}
-        
+            padding: 20px;
+            padding-top: 4rem; 
+            padding-bottom: 135px; 
+        }
         .product-card {
             display: flex;
             flex-direction: column;
@@ -40,31 +39,26 @@
             padding: 20px;
             margin-bottom: 20px;
         }
-
         .product-card img {
             width: 100%;
             height: auto;
             border-radius: 10px;
         }
-
         .product-description {
             text-align: center;
             margin-top: 10px;
         }
-
         .quantity-selector {
             display: flex;
             align-items: center;
             margin-top: 10px;
         }
-
         .quantity-selector button {
             background-color: #F8E6E6;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
         }
-
         .quantity-selector input {
             width: 50px;
             text-align: center;
@@ -73,7 +67,7 @@
             border-radius: 5px;
         }
         #back-button {
-          font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #f0c5c5;
             color: #fff;
             padding: 10px 20px;
@@ -87,33 +81,46 @@
             margin-right: auto;
             text-align: center;
         }
-
         #back-button:hover {
             background-color: #ff85c1;
         }
-  </style>
+        #go-to-cart {
+            font-family: 'Poppins', sans-serif;
+            background-color: #A38F8B;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: none; /* Initially hidden */
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        #go-to-cart:hover {
+            background-color: #8B5E83;
+        }
+    </style>
 </head>
 <body>
-  <!-- Header container to load the header dynamically -->
-  <div id="header-container"></div>
+    <div id="header-container"></div>
 
-  <main class="max-w-4xl mx-auto py-8 category-main">
-    <h1 class="category-title" id="category-title">Category</h1>
-    <div id="gallery-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Products will be dynamically inserted here -->
-    </div>
-    <button id="back-button" class="mx-auto block">Back</button>
-    <button id="go-to-cart" onclick="window.location.href='cart.html'" style="display: none;">Go to Cart</button>
+    <main class="max-w-4xl mx-auto py-8 category-main">
+        <h1 class="category-title" id="category-title">Category</h1>
+        <div id="gallery-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Products will be dynamically inserted here -->
+        </div>
+        <button id="back-button" class="mx-auto block">Back</button>
+        <button id="go-to-cart">Go to Cart</button>
+    </main>
 
-</main>
+    <footer class="bg-A19D9D text-white text-center p-4">
+        © 2024 Abby's Bake House
+    </footer>
 
-  <footer class="bg-A19D9D text-white text-center p-4">
-    © 2024 Abby's Bake House
-  </footer>
-
-  <script src="scripts/load-header.js"></script>
-  <script type="module" src="scripts/shopcategory.js"></script>
-  <script src="scripts/cart.js"></script>
-  <script src="scripts/cart-summary.js"></script>
+    <script src="scripts/load-header.js"></script>
+    <script type="module" src="scripts/cart-summary.js"></script>
 </body>
 </html>
