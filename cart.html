@@ -8,59 +8,54 @@
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    .cart-container {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-      background-color: #f9f9f9;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    .cart-container h1 {
-      margin-bottom: 20px;
-    }
-    .cart-item {
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffeded;
+      margin: 0;
+      padding: 0;
       display: flex;
-      justify-content: space-between;
-      padding: 10px 0;
-      border-bottom: 1px solid #ddd;
+      flex-direction: column;
+      min-height: 100vh;
     }
-    .cart-item span {
-      font-size: 1rem;
+
+    main {
+      flex-grow: 1;
+      padding: 20px;
     }
-    .cart-item button {
-      background-color: #f19cbb;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      padding: 5px 10px;
-      cursor: pointer;
+
+    h1 {
+      color: #A38F8B;
     }
-    .cart-item button:hover {
-      background-color: #d17c98;
+
+    #checkout-btn {
+      background-color: #f0c5c5;
     }
-    .total {
-      font-weight: bold;
-      margin-top: 20px;
+
+    #checkout-btn:hover {
+      background-color: #ff85c1;
+    }
+
+    footer {
+      background-color: #A19D9D;
+      color: #fff;
     }
   </style>
 </head>
 <body>
+  <div id="header-container"></div>
 
   <main class="container mx-auto p-4">
-    <section class="cart-container">
-      <h1>Cart Summary</h1>
-      <ul id="cart-summary-items"></ul>
-      <p class="total">Total: $<span id="cart-summary-total">0.00</span></p>
-      <button id="checkout-btn" class="w-full py-2 bg-A19D9D text-white font-semibold rounded">Checkout</button>
-    </section>
+    <h1 class="text-2xl font-bold mb-4">Cart Summary</h1>
+    <ul id="cart-summary-items" class="list-disc pl-5 mb-4"></ul>
+    <p>Total: $<span id="cart-summary-total">0.00</span></p>
+    <button id="checkout-btn" class="text-white px-4 py-2 mt-4 rounded">Checkout</button>
   </main>
 
   <footer class="bg-A19D9D text-white text-center p-4">
     © 2024 Abby's Bake House
   </footer>
 
+  <script src="scripts/cart.js"></script>
   <script src="scripts/cart-summary.js"></script>
 </body>
 </html>
-
