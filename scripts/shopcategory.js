@@ -1,4 +1,4 @@
-import { addToCart } from './cart-summary.js';
+import { addToCart } from './cart.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);

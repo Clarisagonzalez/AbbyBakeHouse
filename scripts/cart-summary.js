@@ -1,37 +1,13 @@
-// Combined cart.js and cart-summary.js
+import { addToCart } from './cart.js'; // Ensure you have this import if needed
 
-// Function to add an item to the cart
-export function addToCart(item) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const existingItemIndex = cart.findIndex(cartItem => cartItem.id === item.id);
-
-    if (existingItemIndex > -1) {
-        cart[existingItemIndex].quantity += item.quantity;
-    } else {
-        cart.push(item);
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    // Show "Go to Cart" button if items are added
-    const goToCartButton = document.getElementById('go-to-cart');
-    if (goToCartButton) {
-        goToCartButton.style.display = 'block';
-        goToCartButton.addEventListener('click', () => {
-            window.location.href = 'cart-summary.html';
-        });
-    }
-}
-
-// Function to render cart items
 function renderCartItems() {
     const cartItemsContainer = document.getElementById('cart-summary-items');
     const cartTotal = document.getElementById('cart-summary-total');
 
-    // Check if elements exist
+    // Check if the elements exist before attempting to manipulate them
     if (!cartItemsContainer || !cartTotal) {
-        console.error('One or more required elements are missing from the DOM.');
-        return;
+        console.error('Cart summary elements not found in the DOM.');
+        return;  // Exit the function if the elements are missing
     }
 
     const cartData = localStorage.getItem('cart');
@@ -40,6 +16,7 @@ function renderCartItems() {
     let total = 0;
     cartItemsContainer.innerHTML = ''; // Clear existing items
 
+    // Loop through the cart items and render them in the list
     cartItems.forEach(item => {
         const listItem = document.createElement('li');
         listItem.innerHTML = `
@@ -49,19 +26,19 @@ function renderCartItems() {
         total += item.price * item.quantity;
     });
 
+    // Update the total price in the cart summary
     cartTotal.textContent = total.toFixed(2);
 }
 
-// Event listener for DOM content loaded
 document.addEventListener('DOMContentLoaded', () => {
-    const checkoutButton = document.getElementById('checkout-btn');
-    
+    // Only run this after the DOM is fully loaded
     renderCartItems(); // Render items when the DOM is loaded
 
-    // Add event listener to the checkout button
+    const checkoutButton = document.getElementById('checkout-btn');
+    
+    // Handle checkout button click
     if (checkoutButton) {
         checkoutButton.addEventListener('click', () => {
-            // Handle checkout logic here
             alert('Proceeding to checkout...');
         });
     }
