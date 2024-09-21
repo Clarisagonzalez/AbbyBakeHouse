@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Cookies Shop',
             items: [
                 { id: '4', name: 'Chocolate Chip Cookie', price: 1.5, image: 'images/cookies/Chocolate Chip Cookie.png' },
-                { id: '5', name: 'Oatmeal Raisin', price: 1.75, image: 'images/cookies/Oatmeal Raisin Cookie.png' },
+                { id: '5', name: 'Oatmeal Raisin Cookie', price: 1.75, image: 'images/cookies/Oatmeal Raisin Cookie.png' },
                 { id: '6', name: 'Peanut Butter Cookie', price: 1.75, image: 'images/cookies/peanut butter cookie.png' },
                 { id: '7', name: 'Sugar Cookie', price: 1.25, image: 'images/cookies/Sugar cookie.png' },
                 { id: '8', name: 'Double Chocolate Brownie', price: 3.5, image: 'images/cookies/Double Chocolate Brownie cookie.png' }

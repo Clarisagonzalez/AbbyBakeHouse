@@ -105,6 +105,21 @@ nav ul li a:focus {
     background-color: #ff7f9f; /* Lighter pink on hover */
 }
 
+.decrease-item {
+  background-color: #ffcccc; /* Light red background */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  color: #333; /* Text color */
+  padding: 5px 10px; /* Padding for better size */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-weight: bold; /* Make text bold */
+  margin-left: 5px; /* Space between buttons */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.decrease-item:hover {
+  background-color: #ff9999; /* Darker red on hover */
+}
 
 
 

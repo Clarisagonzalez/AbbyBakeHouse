@@ -29,6 +29,18 @@ function updateCartSummary() {
     cartItems.forEach(item => {
         const listItem = document.createElement('li');
         listItem.textContent = `${item.name} - ${item.quantity} x $${item.price.toFixed(2)}`;
+
+        // Create a decrease button
+        const decreaseButton = document.createElement('button');
+        decreaseButton.textContent = '-';
+        decreaseButton.classList.add('decrease-item');
+        decreaseButton.dataset.id = item.id; // Set data attribute for item ID
+        
+        // Add event listener for the decrease button
+        decreaseButton.addEventListener('click', () => {
+            cart.decreaseQuantity(item.id); // Call the method to decrease quantity
+            updateCartSummary(); // Refresh the cart display
+        });
         
         // Create a delete button
         const deleteButton = document.createElement('button');

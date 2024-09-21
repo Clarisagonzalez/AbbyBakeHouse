@@ -36,6 +36,27 @@ export class Cart {
             console.error('Error adding item to cart:', error);
         }
     }
+    // Method to decrease the quantity of an item in the cart
+decreaseQuantity(itemId) {
+    const existingItemIndex = this.cart.findIndex(cartItem => cartItem.id === itemId);
+
+    if (existingItemIndex > -1) {
+        // Decrease the quantity
+        this.cart[existingItemIndex].quantity -= 1;
+
+        // Remove the item if quantity reaches zero
+        if (this.cart[existingItemIndex].quantity <= 0) {
+            this.cart.splice(existingItemIndex, 1);
+        }
+
+        // Save the updated cart to localStorage
+        this.saveCart();
+        this.updateCartCount();
+        console.log('Cart updated:', this.cart); // Debug log
+    } else {
+        console.warn('Item not found in cart:', itemId);
+    }
+}
 
     // Method to remove an item from the cart
     removeFromCart(itemId) {
