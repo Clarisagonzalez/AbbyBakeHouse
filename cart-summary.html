@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart Summary - Abby's Bake House</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/@shopify/cartjs@1.0.0/dist/cart.min.js"></script>
+
+    <!-- Custom Styles -->
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -50,22 +54,62 @@
             font-weight: bold;
             text-align: center;
         }
+        .cart-actions {
+            display: flex;
+            justify-content: space-between; /* Space between buttons */
+            margin-top: 20px; 
+            padding: 0 25px;
+        }
+
         #checkout-btn {
+            flex: 0 0 75%; /* 75% width for Checkout button */
             background-color: pink;
             color: white;
             border: none;
-            padding: 10px;
+            padding: 10px; /* Uniform padding */
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 20px;
-            font-size: 1rem;
-            display: block;
-            width: 100%;
+            font-size: 16px; /* Consistent font size */
             text-align: center;
+            transition: background-color 0.3s ease;
         }
+
         #checkout-btn:hover {
             background-color: rgb(165, 90, 103);
         }
+
+        #clear-cart-btn {
+            flex: 0 0 25%; /* 25% width for Clear All button */
+            background-color: #A38F8B;
+            color: white;
+            border: none;
+            padding: 10px; /* Uniform padding */
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px; /* Consistent font size */
+            text-align: center;
+            transition: background-color 0.3s ease;
+            margin-left: 20px;
+        }
+
+        #clear-cart-btn:hover {
+            background-color: #ff1a1a;
+        }
+
+        .delete-item {
+            background-color: #A38F8B;
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            padding: 5px 10px; 
+            cursor: pointer; 
+            transition: background-color 0.3s; 
+        }
+
+        .delete-item:hover {
+            background-color: #ff1a1a;
+        }
+
         footer {
             background-color: #A19D9D;
             color: white;
@@ -86,7 +130,13 @@
             <div class="cart-summary-total">
                 <strong>Total: $<span id="cart-summary-total">0.00</span></strong>
             </div>
-            <button id="checkout-btn" class="text-white px-4 py-2 mt-4 rounded">Checkout</button>
+            <div class="cart-actions">
+            <button id="checkout-btn">Checkout</button>
+            <button id="clear-cart-btn">Clear All</button>
+        </div>
+        
+
+            
         </div>
     </main>
 
@@ -94,9 +144,10 @@
         © 2024 Abby's Bake House
     </footer>
 
-    <script src="scripts/load-header.js"></script>
-    <script src="scripts/cart.js" type="module"></script>
-    <script src="scripts/cart-summary.js" ></script>
+     <script src="scripts/load-header.js"></script> 
+     <script src="scripts/cart.js" type="module" ></script>
+     <script src="scripts/cart-summary.js" type="module" ></script> 
+     <script src="scripts/cart-setup.js" type="module" ></script>
 
 </body>
 </html>

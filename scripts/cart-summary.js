@@ -1,45 +1,68 @@
-import { addToCart } from './cart.js'; // Ensure you have this import if needed
+// Import the Cart class
+import { Cart } from './cart.js';
 
-function renderCartItems() {
+// Function to update the cart summary on the page
+function updateCartSummary() {
+    const cart = new Cart(); // Create an instance of the Cart class
     const cartItemsContainer = document.getElementById('cart-summary-items');
-    const cartTotal = document.getElementById('cart-summary-total');
+    const totalElement = document.getElementById('cart-summary-total');
 
-    // Check if the elements exist before attempting to manipulate them
-    if (!cartItemsContainer || !cartTotal) {
-        console.error('Cart summary elements not found in the DOM.');
-        return;  // Exit the function if the elements are missing
+    // Check if elements are present in the DOM
+    if (!cartItemsContainer || !totalElement) {
+        console.error('Cart summary items or total elements not found.');
+        return;
     }
 
-    const cartData = localStorage.getItem('cart');
-    const cartItems = JSON.parse(cartData) || [];
+    // Clear existing cart items
+    cartItemsContainer.innerHTML = '';
 
-    let total = 0;
-    cartItemsContainer.innerHTML = ''; // Clear existing items
+    const cartItems = cart.getCartItems(); // Retrieve cart items from localStorage
 
-    // Loop through the cart items and render them in the list
+    if (cartItems.length === 0) {
+        cartItemsContainer.innerHTML = '<li>Your cart is empty.</li>';
+        totalElement.textContent = '0.00';
+        return;
+    }
+
+    let totalPrice = 0;
+
     cartItems.forEach(item => {
         const listItem = document.createElement('li');
-        listItem.innerHTML = `
-            ${item.name} (x${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}
-        `;
+        listItem.textContent = `${item.name} - ${item.quantity} x $${item.price.toFixed(2)}`;
+        
+        // Create a delete button
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Remove';
+        deleteButton.classList.add('delete-item');
+        deleteButton.dataset.id = item.id; // Set data attribute for item ID
+        
+        // Add event listener for the delete button
+        deleteButton.addEventListener('click', () => {
+            cart.removeFromCart(item.id); // Implement this method in your Cart class
+            updateCartSummary(); // Refresh the cart display
+        });
+
+        // Append the button to the list item
+        listItem.appendChild(deleteButton);
         cartItemsContainer.appendChild(listItem);
-        total += item.price * item.quantity;
+        totalPrice += item.price * item.quantity;
     });
 
-    // Update the total price in the cart summary
-    cartTotal.textContent = total.toFixed(2);
+    totalElement.textContent = totalPrice.toFixed(2);
+}
+// Clear Cart functionality
+function clearCart() {
+    const cart = new Cart();
+    cart.clearCart(); // Implement this method in your Cart class to clear all items
+    updateCartSummary(); // Refresh the cart display
 }
 
+// Wait for the DOM to fully load
 document.addEventListener('DOMContentLoaded', () => {
-    // Only run this after the DOM is fully loaded
-    renderCartItems(); // Render items when the DOM is loaded
+    updateCartSummary();
 
-    const checkoutButton = document.getElementById('checkout-btn');
-    
-    // Handle checkout button click
-    if (checkoutButton) {
-        checkoutButton.addEventListener('click', () => {
-            alert('Proceeding to checkout...');
-        });
+    const clearCartBtn = document.getElementById('clear-cart-btn');
+    if (clearCartBtn) {
+        clearCartBtn.addEventListener('click', clearCart);
     }
 });

@@ -1,6 +1,8 @@
-import { addToCart } from './cart.js';
+import { Cart } from './cart.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+    const cart = new Cart(); // Create an instance of the Cart class
+
     const params = new URLSearchParams(window.location.search);
     const category = params.get('category');
 
@@ -91,77 +93,111 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const categoryData = categories[category];
-    if (categoryData) {
-        document.getElementById('category-title').textContent = categoryData.title;
-        document.title = `${categoryData.title} - Abby's Bake House`;
+ // Show feedback notification function
+function showNotification(message) {
+    const notification = document.getElementById('notification');
+    notification.textContent = message;
+    notification.style.display = 'block';
+    setTimeout(() => {
+        notification.style.opacity = '0';
+        setTimeout(() => {
+            notification.style.display = 'none';
+            notification.style.opacity = '1';
+        }, 500);
+    }, 2000);
+}
 
-        const galleryContainer = document.getElementById('gallery-container');
-        galleryContainer.innerHTML = ''; // Clear any previous content
+const categoryData = categories[category];
+if (categoryData) {
+    document.getElementById('category-title').textContent = categoryData.title;
+    document.title = `${categoryData.title} - Abby's Bake House`;
 
-        categoryData.items.forEach(item => {
-            const itemCard = document.createElement('div');
-            itemCard.classList.add('bg-white', 'shadow-md', 'rounded-lg', 'p-4', 'm-4');
-            itemCard.innerHTML = `
-                <img src="${item.image}" alt="${item.name}" class="w-full h-48 object-cover rounded-t-lg">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">${item.name}</h2>
-                    <p class="text-gray-700 mb-4">$${item.price.toFixed(2)}</p>
-                    <div class="quantity-selector flex items-center">
-                        <button class="decrease-quantity bg-gray-200 text-gray-700 px-2 py-1 rounded">-</button>
-                        <input type="number" class="quantity mx-2 w-12 text-center" value="1" min="1">
-                        <button class="increase-quantity bg-gray-200 text-gray-700 px-2 py-1 rounded">+</button>
-                    </div>
-                    <button class="add-to-cart bg-A19D9D text-white px-4 py-2 rounded mt-2" data-id="${item.id}" data-name="${item.name}" data-price="${item.price}">Add to Cart</button>
+    const galleryContainer = document.getElementById('gallery-container');
+    galleryContainer.innerHTML = ''; // Clear any previous content
+
+    categoryData.items.forEach(item => {
+        const itemCard = document.createElement('div');
+        itemCard.classList.add('bg-white', 'shadow-md', 'rounded-lg', 'p-4', 'm-4');
+        itemCard.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" class="w-full h-48 object-cover rounded-t-lg">
+            <div class="p-4">
+                <h2 class="text-xl font-bold mb-2">${item.name}</h2>
+                <p class="text-gray-700 mb-4">$${item.price.toFixed(2)}</p>
+                <div class="quantity-selector flex items-center">
+                    <button class="decrease-quantity bg-gray-200 text-gray-700 px-2 py-1 rounded">-</button>
+                    <input type="number" class="quantity mx-2 w-12 text-center" value="1" min="1">
+                    <button class="increase-quantity bg-gray-200 text-gray-700 px-2 py-1 rounded">+</button>
                 </div>
-            `;
-            galleryContainer.appendChild(itemCard);
+                <div class="button-container flex justify-center gap-2">
+                    <button class="add-to-cart bg-A19D9D text-white px-4 py-2 rounded mt-2" data-id="${item.id}" data-name="${item.name}" data-price="${item.price}">Add to Cart</button>
+                    <button class="remove-from-cart bg-red-500 text-white px-4 py-2 rounded mt-2" data-id="${item.id}">Remove</button>
+                </div>
+            </div>
+        `;
+
+        galleryContainer.appendChild(itemCard);
+    });
+
+    // Handle quantity buttons
+    document.querySelectorAll('.decrease-quantity').forEach(button => {
+        button.addEventListener('click', event => {
+            const quantityInput = event.target.nextElementSibling;
+            if (quantityInput.value > 1) {
+                quantityInput.value--;
+            }
         });
+    });
 
-        // Handle quantity buttons
-        document.querySelectorAll('.decrease-quantity').forEach(button => {
-            button.addEventListener('click', event => {
-                const quantityInput = event.target.nextElementSibling;
-                if (quantityInput.value > 1) {
-                    quantityInput.value--;
-                }
-            });
+    document.querySelectorAll('.increase-quantity').forEach(button => {
+        button.addEventListener('click', event => {
+            const quantityInput = event.target.previousElementSibling;
+            quantityInput.value++;
         });
+    });
 
-        document.querySelectorAll('.increase-quantity').forEach(button => {
-            button.addEventListener('click', event => {
-                const quantityInput = event.target.previousElementSibling;
-                quantityInput.value++;
-            });
+    // Add to cart functionality
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', event => {
+            const id = event.target.dataset.id;
+            const name = event.target.dataset.name;
+            const price = parseFloat(event.target.dataset.price);
+            const quantityInput = event.target.parentElement.parentElement.querySelector('.quantity');
+            const quantity = parseInt(quantityInput.value);
+
+            // Call the addToCart method from the cart instance
+            cart.addToCart({ id, name, price, quantity });
+            // Show the Go to Cart button
+        const goToCartButton = document.getElementById('go-to-cart');
+        goToCartButton.style.display = 'block'; // Show the button
+
+        // Add click event to redirect to cart page
+        goToCartButton.onclick = () => {
+            window.location.href = 'cart-summary.html'; // Replace with the correct cart page URL
+        };
+
+            // Show notification
+            showNotification(`Added ${name} to cart!`);
         });
+    });
 
-        // Handle add to cart button
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', event => {
-                const itemId = event.target.getAttribute('data-id');
-                const itemName = event.target.getAttribute('data-name');
-                const itemPrice = parseFloat(event.target.getAttribute('data-price'));
-                const quantity = parseInt(event.target.previousElementSibling.querySelector('.quantity').value, 10);
-
-                const item = {
-                    id: itemId,
-                    name: itemName,
-                    price: itemPrice,
-                    quantity: quantity
-                };
-
-                addToCart(item);
-
-                // Show "Go to Cart" button
-                document.getElementById('go-to-cart').style.display = 'block';
-            });
+    // Remove from cart functionality
+    document.querySelectorAll('.remove-from-cart').forEach(button => {
+        button.addEventListener('click', event => {
+            const id = event.target.dataset.id;
+            cart.removeFromCart(id);
+            showNotification(`Removed item from cart!`);
         });
-    } else {
-        document.getElementById('category-title').textContent = 'Category Not Found';
-    }
+    });
 
     // Handle back button
-    document.getElementById('back-button').addEventListener('click', () => {
-        window.history.back();
-    });
+    const backButton = document.getElementById('back-button');
+    if (backButton) {
+        backButton.addEventListener('click', () => {
+            window.history.back();
+        });
+    }
+} else {
+    document.getElementById('category-title').textContent = 'Category Not Found';
+}
+
 });
