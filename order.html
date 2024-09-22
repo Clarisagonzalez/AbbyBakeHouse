@@ -4,49 +4,33 @@
   <meta charset="UTF-8">
   <title>Order Form - Abby's Bake House</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.4.0/flowbite.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    /* Add styles for the order form */
-    body {
-  background-color: #F0E1D5; /* Consistent with main content background */
-  color: #333; /* Consistent text color */
-  font-family: 'Poppins', sans-serif; /* Consistent font */
-  margin: 0;
-  padding: 0;
-}
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
+
+  <script type="text/javascript">
+    (function() {
+      emailjs.init("XhcwgjMJvelCtExpz"); 
+    })();
+  </script>
+  <style>
+    body {
+      background-color: #F0E1D5; /* Background color */
+      color: #333; /* Text color */
+      font-family: 'Poppins', sans-serif; /* Font family */
+      margin: 0;
+      padding: 0;
+    }
     .order-form-container {
       max-width: 800px;
       margin: auto;
       padding: 20px;
-      background-color: #FFFFFF;
+      background-color: #FFFFFF; /* Form background color */
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    .order-form-container h1 {
-      margin-bottom: 20px;
-    }
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: bold;
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 50%;
-      padding: 0.5rem;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-    }
-    .form-group textarea {
-      resize: vertical;
-      min-height: 100px;
     }
     .order-disclaimer {
       margin-top: 20px;
@@ -58,39 +42,70 @@
   </style>
 </head>
 <body>
-  <!-- Header container to load the header dynamically -->
-  <div id="header-container"></div>
+  <header class="bg-A19D9D text-white">
+    <nav class="container mx-auto p-4 flex justify-between items-center">
+      <div class="logo">
+        <img src="images/canva/navlogo.png" class="nav-logo" style="max-height: 100px; width: auto;">
+      </div>
+      <ul class="hidden md:flex space-x-4">
+        <li><a href="index.html" class="no-underline">Home</a></li>
+        <li><a href="menu.html" class="no-underline">Menu</a></li>
+        <li><a href="theshop.html" class="no-underline">Shop</a></li>
+        <li><a href="order.html" class="no-underline">Order</a></li>
+        <li><a href="cart-summary.html" class="no-underline">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart-count" class="cart-count">0</span>
+        </a></li>
+      </ul>
+      <button class="md:hidden text-white focus:outline-none" id="nav-toggle">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </nav>
+    <ul class="md:hidden bg-A19D9D text-white space-y-4 p-4 hidden" id="nav-menu">
+      <li><a href="index.html" class="block no-underline">Home</a></li>
+      <li><a href="menu.html" class="block no-underline">Menu</a></li>
+      <li><a href="gallery.html" class="block no-underline">Gallery</a></li>
+      <li><a href="order.html" class="block no-underline">Order</a></li>
+    </ul>
+  </header>
 
   <main class="container mx-auto p-4">
-    <section id="order-form">
-     <!-- Header Image -->
-     <div class="text-center mb-8">
-      <img src="images/canva/orderform.png" alt="Menu Header" class="mx-auto" style="max-width: 50%; height: auto;">
-    </div>
+    <section class="order-form-container">
+      <div class="text-center mb-8">
+        <img src="images/canva/orderform.png" alt="Order Form Header" class="mx-auto" style="max-width: 50%; height: auto;">
+      </div>
 
       <form id="order-form" class="form-section">
         <!-- Name -->
         <div class="mb-4">
-          <label for="name" class="block text-lg font-semibold mb-2">Name:</label>
-          <input type="text" id="name" name="name" class="w-1/2 p-2 border border-gray-300 rounded" required>
+          <label for="name" class="block text-lg font-semibold">Name:</label>
+          <input type="text" id="name" name="name" class="form-input w-full mt-1" required>
         </div>
 
         <!-- Phone Number -->
         <div class="mb-4">
-          <label for="phone" class="block text-lg font-semibold mb-2">Phone Number</label>
-          <input type="tel" id="phone" name="phone" class="w-1/2 p-2 border border-gray-300 rounded" required>
+          <label for="phone" class="block text-lg font-semibold">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" class="form-input w-full mt-1" required>
         </div>
+
+        <!-- Email -->
+      <div class="mb-4">
+        <label for="email" class="block text-lg font-semibold">Email:</label>
+        <input type="email" id="email" name="email" class="form-input w-full mt-1" required>
+      </div>
 
         <!-- Date -->
         <div class="mb-4">
-          <label for="date" class="block text-lg font-semibold mb-2">Desired Date</label>
-          <input type="date" id="date" name="date" class="w-1/2 p-2 border border-gray-300 rounded" required>
+          <label for="date" class="block text-lg font-semibold">Desired Date:</label>
+          <input type="date" id="date" name="date" class="form-input w-full mt-1" required>
         </div>
 
         <!-- Cake Size -->
         <div class="mb-4">
-          <label for="cake-size" class="block text-lg font-semibold mb-2">Cake Size</label>
-          <select id="cake-size" name="cake-size" class="w-1/2 p-2 border border-gray-300 rounded" required>
+          <label for="cake-size" class="block text-lg font-semibold">Cake Size:</label>
+          <select id="cake-size" name="cake-size" class="form-select w-full mt-1" required>
             <option value="" disabled selected>Select Size</option>
             <option value="6-inch">6-inch</option>
             <option value="8-inch">8-inch</option>
@@ -99,78 +114,87 @@
             <option value="Custom">Custom</option>
           </select>
         </div>
-         <!-- Flavor -->
-         <div class="form-group">
-            <label for="flavor" class="block text-lg font-medium">Flavor:</label>
-            <select id="flavor" name="flavor" class="form-select mt-1 block w-1/2" required>
-                <option value="" disabled selected>Select Flavor</option>
-              <option value="vanilla">Vanilla</option>
-              <option value="chocolate">Chocolate</option>
-              <option value="red-velvet">Red Velvet</option>
-              <option value="carrot">Carrot</option>
-              <option value="lemon">Lemon</option>
-            </select>
-          </div>
 
-        <!-- Custom Dimensions (if Custom Size selected) -->
-        <div id="custom-dimensions" class="mb-4 hidden">
-          <label for="custom-size" class="block text-lg font-semibold mb-2">Custom Dimensions</label>
-          <input type="text" id="custom-size" name="custom-size" class="w-1/2 p-2 border border-gray-300 rounded" placeholder="Enter dimensions (e.g., 14x14 inches)">
+        <!-- Flavor -->
+        <div class="mb-4">
+          <label for="flavor" class="block text-lg font-semibold">Flavor:</label>
+          <select id="flavor" name="flavor" class="form-select w-full mt-1" required>
+            <option value="" disabled selected>Select Flavor</option>
+            <option value="vanilla">Vanilla</option>
+            <option value="chocolate">Chocolate</option>
+            <option value="red-velvet">Red Velvet</option>
+            <option value="carrot">Carrot</option>
+            <option value="lemon">Lemon</option>
+          </select>
         </div>
+
+        <!-- Custom Dimensions -->
+        <div id="custom-dimensions" class="mb-4 hidden">
+          <label for="custom-size" class="block text-lg font-semibold">Custom Dimensions:</label>
+          <input type="text" id="custom-size" name="custom-size" class="form-input w-full mt-1" placeholder="Enter dimensions (e.g., 14x14 inches)">
+        </div>
+
         <!-- Shape -->
-        <div class="form-group">
-            <label for="shape" class="block text-lg font-medium">Shape:</label>
-            <select id="shape" name="shape" class="form-select mt-1 block w-1/2" required>
-                <option value="" disabled selected>Select Shape</option>
-              <option value="round">Round</option>
-              <option value="square">Square</option>
-              <option value="heart">Heart</option>
-              <option value="custom">Custom</option>
-            </select>
-          </div>
-          <!-- Cake Text -->
-          <div class="form-group">
-            <label for="cake-text" class="block text-lg font-medium">Cake Text:</label>
-            <input type="text" id="cake-text" name="cake-text" class="form-input mt-1 block w-1/2" placeholder="What would you like the cake to say?" required>
-          </div>
+        <div class="mb-4">
+          <label for="shape" class="block text-lg font-semibold">Shape:</label>
+          <select id="shape" name="shape" class="form-select w-full mt-1" required>
+            <option value="" disabled selected>Select Shape</option>
+            <option value="round">Round</option>
+            <option value="square">Square</option>
+            <option value="heart">Heart</option>
+            <option value="custom">Custom</option>
+          </select>
+        </div>
+
+        <!-- Cake Text -->
+        <div class="mb-4">
+          <label for="cake-text" class="block text-lg font-semibold">Cake Text:</label>
+          <input type="text" id="cake-text" name="cake-text" class="form-input w-full mt-1" placeholder="What would you like the cake to say?" required>
+        </div>
 
         <!-- Specific Colors -->
         <div class="mb-4">
-          <label for="colors" class="block text-lg font-semibold mb-2">Specific Colors</label>
-          <input type="text" id="colors" name="colors" class="w-1/2 p-2 border border-gray-300 rounded" placeholder="e.g., Red, Blue, Green">
+          <label for="colors" class="block text-lg font-semibold">Specific Colors:</label>
+          <input type="text" id="colors" name="colors" class="form-input w-full mt-1" placeholder="e.g., Red, Blue, Green">
         </div>
 
         <!-- Decor -->
         <div class="mb-4">
-          <label for="decor" class="block text-lg font-semibold mb-2">Decor</label>
-          <input type="text" id="decor" name="decor" class="w-1/2 p-2 border border-gray-300 rounded" placeholder="e.g., Flowers, Sprinkles">
+          <label for="decor" class="block text-lg font-semibold">Decor:</label>
+          <input type="text" id="decor" name="decor" class="form-input w-full mt-1" placeholder="e.g., Flowers, Sprinkles">
         </div>
 
         <!-- Large Orders -->
         <div class="mb-4">
-          <label for="large-orders" class="block text-lg font-semibold mb-2">Large Orders</label>
-          <textarea id="large-orders" name="large-orders" class="w-1/2 p-2 border border-gray-300 rounded" rows="3" placeholder="Provide details for large orders, if any."></textarea>
+          <label for="large-orders" class="block text-lg font-semibold">Large Orders:</label>
+          <textarea id="large-orders" name="large-orders" class="form-input w-full mt-1" rows="3" placeholder="Provide details for large orders, if any."></textarea>
+        </div>
+
+        <!-- Message -->
+        <div class="mb-4">
+          <label for="message" class="block text-lg font-semibold">Additional Message:</label>
+          <textarea id="message" name="message" class="form-input w-full mt-1" rows="3" placeholder="Enter any additional details."></textarea>
         </div>
 
         <!-- Submit Button -->
-        <button type="submit" class="w-full py-2 bg-A19D9D text-white font-semibold rounded">Submit Order</button>
+        <div class="text-center mt-4">
+          <button type="submit" class="bg-gray-800 text-white px-6 py-2 font-semibold rounded-md hover:bg-gray-900">
+          Submit Order
+          </button>
+        </div>
       </form>
 
-       <!-- Disclaimer -->
-       <div class="order-disclaimer">
+      <!-- Disclaimer -->
+      <div class="order-disclaimer">
         <h2 class="text-lg font-semibold">Disclaimer</h2>
-        <p><strong>Please Note:</strong></p>
         <ul class="list-disc pl-5">
-          <li><strong>Advance Notice Required:</strong> All cake orders must be placed at least <strong>one week in advance</strong> to ensure availability and proper preparation.</li>
-          <li><strong>Customization:</strong> For custom cake sizes and decorations, please provide as much detail as possible in the order form. Custom orders may require additional time for preparation.</li>
-          <li><strong>Order Confirmation:</strong> Once your order is received, we will send a confirmation email with the details and any additional information needed.</li>
-          <li><strong>Large Orders:</strong> For large orders or special requests, please allow extra time for processing. We may contact you for further details to ensure your needs are met.</li>
-          <li><strong>Contact Us:</strong> If you have any questions or need assistance with your order, please feel free to contact us at [your contact information].</li>
+          <li><strong>Advance Notice Required:</strong> All cake orders must be placed at least <strong>one week in advance</strong>.</li>
+          <li><strong>Customization:</strong> Provide as much detail as possible in the order form.</li>
+          <li><strong>Order Confirmation:</strong> We will send a confirmation email once your order is received.</li>
+          <li><strong>Large Orders:</strong> Allow extra time for processing. We may contact you for further details.</li>
+          <li><strong>Contact Us:</strong> For questions or assistance, please contact us at [your contact information].</li>
         </ul>
-        <p>Thank you for choosing Abby's Bake House! We look forward to creating something special for you.</p>
       </div>
-    </div>
-  </main>
     </section>
   </main>
 
@@ -178,7 +202,56 @@
     © 2024 Abby's Bake House
   </footer>
 
-  <script src="scripts/load-header.js"></script>
-  <script src="scripts/order-form.js"></script>
+  <script>
+    // Initialize EmailJS
+    (function() {
+        emailjs.init("XhcwgjMJvelCtExpz"); // Replace with your user ID
+    })();
+
+    // Order form submission
+    document.getElementById("order-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get form values
+const name = document.getElementById("name").value;
+const email = document.getElementById("email").value; // Make sure this input exists
+const phone = document.getElementById("phone").value;
+const orderDate = document.getElementById("date").value;
+const cakeSize = document.getElementById("cake-size").value;
+const flavor = document.getElementById("flavor").value;
+const shape = document.getElementById("shape").value;
+const cakeText = document.getElementById("cake-text").value;
+const specificColor = document.getElementById("colors").value;
+const decor = document.getElementById("decor").value;
+const largeOrder = document.getElementById("large-orders").value;
+const message = document.getElementById("message").value; // Make sure this input exists
+
+// Create a template parameters object
+const templateParams = {
+    from_name: name,              // Matches {{from_name}}
+    email: email,                 // Matches {{email}}
+    phone: phone,                 // Matches {{phone}}
+    order_date: orderDate,        // Matches {{order_date}}
+    cake_size: cakeSize,          // Matches {{cake_size}}
+    flavor: flavor,               // Matches {{flavor}}
+    shape: shape,                 // Matches {{shape}}
+    cake_text: cakeText,          // Matches {{cake_text}}
+    specific_color: specificColor, // Matches {{specific_color}}
+    decor: decor,                 // Matches {{decor}}
+    large_order: largeOrder,      // Matches {{large_order}}
+    message: message,             // Matches {{message}}
+};
+
+        // Send the email
+        emailjs.send("service_ytpnq7s","template_abbybakehouse", templateParams)
+            .then(function(response) {
+                console.log("Email sent successfully!", response.status, response.text);
+                alert("Order submitted successfully!");
+            }, function(error) {
+                console.error("Failed to send email. Error: ", error);
+                alert("Failed to send order. Please try again.");
+            });
+    });
+</script>
 </body>
 </html>
