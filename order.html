@@ -202,56 +202,15 @@
     © 2024 Abby's Bake House
   </footer>
 
-  <script>
-    // Initialize EmailJS
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script type="text/javascript">
     (function() {
-        emailjs.init("XhcwgjMJvelCtExpz"); // Replace with your user ID
+        emailjs.init("XhcwgjMJvelCtExpz"); 
     })();
-
-    // Order form submission
-    document.getElementById("order-form").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent the default form submission
-
-        // Get form values
-const name = document.getElementById("name").value;
-const email = document.getElementById("email").value; // Make sure this input exists
-const phone = document.getElementById("phone").value;
-const orderDate = document.getElementById("date").value;
-const cakeSize = document.getElementById("cake-size").value;
-const flavor = document.getElementById("flavor").value;
-const shape = document.getElementById("shape").value;
-const cakeText = document.getElementById("cake-text").value;
-const specificColor = document.getElementById("colors").value;
-const decor = document.getElementById("decor").value;
-const largeOrder = document.getElementById("large-orders").value;
-const message = document.getElementById("message").value; // Make sure this input exists
-
-// Create a template parameters object
-const templateParams = {
-    from_name: name,              // Matches {{from_name}}
-    email: email,                 // Matches {{email}}
-    phone: phone,                 // Matches {{phone}}
-    order_date: orderDate,        // Matches {{order_date}}
-    cake_size: cakeSize,          // Matches {{cake_size}}
-    flavor: flavor,               // Matches {{flavor}}
-    shape: shape,                 // Matches {{shape}}
-    cake_text: cakeText,          // Matches {{cake_text}}
-    specific_color: specificColor, // Matches {{specific_color}}
-    decor: decor,                 // Matches {{decor}}
-    large_order: largeOrder,      // Matches {{large_order}}
-    message: message,             // Matches {{message}}
-};
-
-        // Send the email
-        emailjs.send("service_ytpnq7s","template_abbybakehouse", templateParams)
-            .then(function(response) {
-                console.log("Email sent successfully!", response.status, response.text);
-                alert("Order submitted successfully!");
-            }, function(error) {
-                console.error("Failed to send email. Error: ", error);
-                alert("Failed to send order. Please try again.");
-            });
-    });
 </script>
+
+  <script src="scripts/order-form.js"></script>
+
 </body>
 </html>
