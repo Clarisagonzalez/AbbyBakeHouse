@@ -11,36 +11,49 @@
     /* Add any additional custom styles here */
     
     .btn-primary {
-  display: inline-block;
-  background-color: #ffffff;
-  color: black;
-  padding: 12px 20px;
-  border-radius: 20px;
-  text-align: center;
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-  transition: background-color 0.3s ease;
-}
+      display: inline-block;
+      background-color: #ffffff;
+      color: black;
+      padding: 12px 20px;
+      border-radius: 20px;
+      text-align: center;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      transition: background-color 0.3s ease;
+    }
 
-.btn-primary:hover {
-  background-color: #A19D9D;
-}
-body {
-  min-height: 140vh; /* Adjust the value as needed */
-}
-/* Apply Poppins font to list items */
-.menu-category {
-  font-family: 'Poppins', sans-serif;
-}
+    .btn-primary:hover {
+      background-color: #A19D9D;
+    }
 
-.menu-category .item-name {
-  font-weight: 600; /* Bold for item names */
-}
+    body {
+      min-height: 140vh; /* Adjust the value as needed */
+    }
 
-.menu-category .item-price {
-  font-weight: 400; /* Regular weight for prices */
-}
+    /* Apply Poppins font to list items */
+    .menu-category {
+      font-family: 'Poppins', sans-serif;
+    }
 
+    .menu-category .item-name {
+      font-weight: 600; /* Bold for item names */
+    }
+
+    .menu-category .item-price {
+      font-weight: 400; /* Regular weight for prices */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .menu-category {
+        margin-bottom: 1rem; /* Adjust bottom margin for smaller screens */
+      }
+
+      .menu-category img {
+        max-width: 90%; /* Ensure images fit within the screen */
+        height: auto; /* Maintain aspect ratio */
+      }
+    }
   </style>
 </head>
 <body>

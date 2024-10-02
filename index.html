@@ -1,26 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Abby's Bake House</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
- 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport meta tag -->
+    <title>Abby's Bake House</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif; /* Ensure consistent font usage */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            background-color: #F0E1D5; /* Set background color for body */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure full height of viewport */
+        }
+
+        main {
+            flex: 1; /* Allow main to grow and fill space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center align all children */
+            padding: 20px; /* Padding around main content */
+        }
+
+        img {
+            max-width: 100%; /* Ensure images scale properly */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        /* Button styles */
+        #orderButton {
+            background-color: #a38f8b; 
+            color: #f1eeeb; 
+            padding: 10px 20px; 
+            font-size: 16px; 
+            border: none; 
+            border-radius: 20px; 
+            cursor: pointer; 
+            margin-top: 20px; /* Add space above button */
+            transition: background-color 0.3s; /* Smooth transition for hover */
+            width: auto; /* Allow button to resize */
+        }
+
+        #orderButton:hover {
+            background-color: #8a7b7b; /* Darker shade for hover effect */
+        }
+
+        footer {
+            background-color: #9f8c6d; 
+            color: white; 
+            text-align: center; 
+            padding: 10px; 
+            width: 100%; /* Ensure footer spans full width */
+            margin-top: 0; /* Remove top margin */
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                padding: 10px; /* Adjust padding for mobile view */
+            }
+
+            #orderButton {
+                width: 100%; /* Make the button full width */
+                padding: 15px; /* Increase padding for larger tap targets */
+                font-size: 18px; /* Make the font size larger */
+                margin-top: 10px; /* Reduce margin for mobile */
+            }
+
+            footer {
+                padding: 10px; /* Adjust footer padding for smaller screens */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            #orderButton {
+                font-size: 16px; /* Adjust font size for smaller screens */
+                padding: 12px; /* Adjust padding for smaller screens */
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header container to load the header dynamically -->
     <div id="header-container"></div>
     
-    <main class="container mx-auto p-4">
+    <main>
         <section id="home" class="flex flex-col items-center space-y-4 p-0">
-          <img src="images/canva/logo.png" alt="Abby's Bake House Logo" class="w-150 mx-auto my-0" style="margin: 10px 0;">
-          <img src="images/canva/goods2.png" alt="Bakery Image" class="mx-auto my-0" style="margin-top: 0;">
-          <!-- Button container -->
-          <div class="mt-4">
-            <button id="orderButton" style="background-color: #a38f8b; color: #f1eeeb; padding: 5px 20px; font-size: 16px; border: none; border-radius: 20px; cursor: pointer; margin-bottom: 10%;">Start Ordering</button>
-          </div>
+            <img src="images/canva/logo.png" alt="Abby's Bake House Logo" class="mx-auto my-0" style="margin: 10px 0;">
+            <img src="images/canva/goods2.png" alt="Bakery Image" class="mx-auto my-0">
+            <!-- Button container -->
+            <div class="mt-4">
+                <button id="orderButton">Start Ordering</button>
+            </div>
         </section>
     </main>
     <footer class="bg-A19D9D text-white text-center p-4">
@@ -28,7 +105,6 @@
     </footer>
     <script src="scripts/load-header.js"></script>
     <script src="scripts/main.js"></script>
-    <script src="scripts/cart-setup.js"></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
